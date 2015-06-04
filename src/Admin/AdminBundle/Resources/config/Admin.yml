@@ -1,0 +1,21 @@
+services:
+    sonata.admin.experience:
+        class: Admin\AdminBundle\Admin\ExperienceAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Experience" }
+        arguments:
+            - ~
+            - Admin\AdminBundle\Entity\Experience
+            - ~
+        calls:
+            - [ setTranslationDomain, [AdminAdminBundle]]
+    sonata.admin.user:
+        class: Admin\AdminBundle\Admin\UserAdmin
+        tags:
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "User" }
+        arguments:
+            - ~
+            - Admin\AdminBundle\Entity\User
+            - ~
+        calls:
+            - [ setTranslationDomain, [AdminAdminBundle]]
