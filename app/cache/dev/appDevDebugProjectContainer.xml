@@ -4,8 +4,8 @@
     <parameter key="kernel.root_dir">D:\xampp\htdocs\BestTrip\app</parameter>
     <parameter key="kernel.environment">dev</parameter>
     <parameter key="kernel.debug">true</parameter>
-    <parameter key="kernel.name">app</parameter>
-    <parameter key="kernel.cache_dir">D:\xampp\htdocs\BestTrip\app\cache\dev</parameter>
+    <parameter key="kernel.name">ap_</parameter>
+    <parameter key="kernel.cache_dir">D:/xampp/htdocs/BestTrip/app/cache/dev</parameter>
     <parameter key="kernel.logs_dir">D:\xampp\htdocs\BestTrip\app\logs</parameter>
     <parameter key="kernel.bundles" type="collection">
       <parameter key="FrameworkBundle">Symfony\Bundle\FrameworkBundle\FrameworkBundle</parameter>
@@ -18,10 +18,14 @@
       <parameter key="SensioFrameworkExtraBundle">Sensio\Bundle\FrameworkExtraBundle\SensioFrameworkExtraBundle</parameter>
       <parameter key="SonataCoreBundle">Sonata\CoreBundle\SonataCoreBundle</parameter>
       <parameter key="SonataBlockBundle">Sonata\BlockBundle\SonataBlockBundle</parameter>
+      <parameter key="FOSUserBundle">FOS\UserBundle\FOSUserBundle</parameter>
+      <parameter key="SonataUserBundle">Sonata\UserBundle\SonataUserBundle</parameter>
       <parameter key="KnpMenuBundle">Knp\Bundle\MenuBundle\KnpMenuBundle</parameter>
       <parameter key="SonataDoctrineORMAdminBundle">Sonata\DoctrineORMAdminBundle\SonataDoctrineORMAdminBundle</parameter>
       <parameter key="SonataAdminBundle">Sonata\AdminBundle\SonataAdminBundle</parameter>
+      <parameter key="SonataEasyExtendsBundle">Sonata\EasyExtendsBundle\SonataEasyExtendsBundle</parameter>
       <parameter key="AdminAdminBundle">Admin\AdminBundle\AdminAdminBundle</parameter>
+      <parameter key="ApplicationSonataUserBundle">Application\Sonata\UserBundle\ApplicationSonataUserBundle</parameter>
       <parameter key="AcmeDemoBundle">Acme\DemoBundle\AcmeDemoBundle</parameter>
       <parameter key="WebProfilerBundle">Symfony\Bundle\WebProfilerBundle\WebProfilerBundle</parameter>
       <parameter key="SensioDistributionBundle">Sensio\Bundle\DistributionBundle\SensioDistributionBundle</parameter>
@@ -87,7 +91,7 @@
     <parameter key="debug.errors_logger_listener.class">Symfony\Component\HttpKernel\EventListener\ErrorsLoggerListener</parameter>
     <parameter key="debug.event_dispatcher.class">Symfony\Component\HttpKernel\Debug\TraceableEventDispatcher</parameter>
     <parameter key="debug.stopwatch.class">Symfony\Component\Stopwatch\Stopwatch</parameter>
-    <parameter key="debug.container.dump">D:\xampp\htdocs\BestTrip\app\cache\dev/appDevDebugProjectContainer.xml</parameter>
+    <parameter key="debug.container.dump">D:/xampp/htdocs/BestTrip/app/cache/dev/appDevDebugProjectContainer.xml</parameter>
     <parameter key="debug.controller_resolver.class">Symfony\Component\HttpKernel\Controller\TraceableControllerResolver</parameter>
     <parameter key="kernel.secret">ThisTokenIsNotSoSecretChangeIt</parameter>
     <parameter key="kernel.http_method_override">true</parameter>
@@ -103,7 +107,7 @@
     <parameter key="session.handler.native_file.class">Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler</parameter>
     <parameter key="session_listener.class">Symfony\Bundle\FrameworkBundle\EventListener\SessionListener</parameter>
     <parameter key="session.storage.options" type="collection"/>
-    <parameter key="session.save_path">D:\xampp\htdocs\BestTrip\app\cache\dev/sessions</parameter>
+    <parameter key="session.save_path">D:/xampp/htdocs/BestTrip/app/cache/dev/sessions</parameter>
     <parameter key="form.resolved_type_factory.class">Symfony\Component\Form\ResolvedFormTypeFactory</parameter>
     <parameter key="form.registry.class">Symfony\Component\Form\FormRegistry</parameter>
     <parameter key="form.factory.class">Symfony\Component\Form\FormFactory</parameter>
@@ -160,6 +164,8 @@
     <parameter key="validator.validator_factory.class">Symfony\Bundle\FrameworkBundle\Validator\ConstraintValidatorFactory</parameter>
     <parameter key="validator.mapping.loader.xml_files_loader.mapping_files" type="collection">
       <parameter>D:\xampp\htdocs\BestTrip\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/config/validation.xml</parameter>
+      <parameter>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle\Resources\config\validation.xml</parameter>
+      <parameter>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle\Resources\config\storage-validation\orm.xml</parameter>
     </parameter>
     <parameter key="validator.mapping.loader.yaml_files_loader.mapping_files" type="collection"/>
     <parameter key="validator.translation_domain">validators</parameter>
@@ -176,7 +182,7 @@
     <parameter key="data_collector.router.class">Symfony\Bundle\FrameworkBundle\DataCollector\RouterDataCollector</parameter>
     <parameter key="profiler_listener.only_exceptions">false</parameter>
     <parameter key="profiler_listener.only_master_requests">false</parameter>
-    <parameter key="profiler.storage.dsn">file:D:\xampp\htdocs\BestTrip\app\cache\dev/profiler</parameter>
+    <parameter key="profiler.storage.dsn">file:D:/xampp/htdocs/BestTrip/app/cache/dev/profiler</parameter>
     <parameter key="profiler.storage.username"></parameter>
     <parameter key="profiler.storage.password"></parameter>
     <parameter key="profiler.storage.lifetime">86400</parameter>
@@ -200,7 +206,7 @@
     <parameter key="router.request_context.host">localhost</parameter>
     <parameter key="router.request_context.scheme">http</parameter>
     <parameter key="router.request_context.base_url"></parameter>
-    <parameter key="router.resource">D:\xampp\htdocs\BestTrip\app\cache\dev/assetic/routing.yml</parameter>
+    <parameter key="router.resource">D:/xampp/htdocs/BestTrip/app/cache/dev/assetic/routing.yml</parameter>
     <parameter key="router.cache_class_prefix">appDev</parameter>
     <parameter key="request_listener.http_port">80</parameter>
     <parameter key="request_listener.https_port">443</parameter>
@@ -276,13 +282,31 @@
     <parameter key="security.role_hierarchy.roles" type="collection">
       <parameter key="ROLE_ADMIN" type="collection">
         <parameter>ROLE_USER</parameter>
+        <parameter>ROLE_SONATA_ADMIN</parameter>
       </parameter>
       <parameter key="ROLE_SUPER_ADMIN" type="collection">
-        <parameter>ROLE_USER</parameter>
         <parameter>ROLE_ADMIN</parameter>
         <parameter>ROLE_ALLOWED_TO_SWITCH</parameter>
       </parameter>
+      <parameter key="SONATA" type="collection">
+        <parameter>ROLE_SONATA_PAGE_ADMIN_PAGE_EDIT</parameter>
+      </parameter>
     </parameter>
+    <parameter key="security.acl.permission_granting_strategy.class">Symfony\Component\Security\Acl\Domain\PermissionGrantingStrategy</parameter>
+    <parameter key="security.acl.voter.class">Symfony\Component\Security\Acl\Voter\AclVoter</parameter>
+    <parameter key="security.acl.permission.map.class">Symfony\Component\Security\Acl\Permission\BasicPermissionMap</parameter>
+    <parameter key="security.acl.object_identity_retrieval_strategy.class">Symfony\Component\Security\Acl\Domain\ObjectIdentityRetrievalStrategy</parameter>
+    <parameter key="security.acl.security_identity_retrieval_strategy.class">Symfony\Component\Security\Acl\Domain\SecurityIdentityRetrievalStrategy</parameter>
+    <parameter key="security.acl.collection_cache.class">Symfony\Component\Security\Acl\Domain\AclCollectionCache</parameter>
+    <parameter key="security.acl.cache.doctrine.class">Symfony\Component\Security\Acl\Domain\DoctrineAclCache</parameter>
+    <parameter key="security.acl.dbal.provider.class">Symfony\Component\Security\Acl\Dbal\MutableAclProvider</parameter>
+    <parameter key="security.acl.dbal.schema.class">Symfony\Component\Security\Acl\Dbal\Schema</parameter>
+    <parameter key="security.acl.dbal.schema_listener.class">Symfony\Bundle\SecurityBundle\EventListener\AclSchemaListener</parameter>
+    <parameter key="security.acl.dbal.class_table_name">acl_classes</parameter>
+    <parameter key="security.acl.dbal.entry_table_name">acl_entries</parameter>
+    <parameter key="security.acl.dbal.oid_table_name">acl_object_identities</parameter>
+    <parameter key="security.acl.dbal.oid_ancestors_table_name">acl_object_identity_ancestors</parameter>
+    <parameter key="security.acl.dbal.sid_table_name">acl_security_identities</parameter>
     <parameter key="twig.class">Twig_Environment</parameter>
     <parameter key="twig.loader.filesystem.class">Symfony\Bundle\TwigBundle\Loader\FilesystemLoader</parameter>
     <parameter key="twig.loader.chain.class">Twig_Loader_Chain</parameter>
@@ -304,6 +328,7 @@
     <parameter key="twig.exception_listener.controller">twig.controller.exception:showAction</parameter>
     <parameter key="twig.form.resources" type="collection">
       <parameter>form_div_layout.html.twig</parameter>
+      <parameter>SonataUserBundle:Form:form_admin_fields.html.twig</parameter>
     </parameter>
     <parameter key="debug.templating.engine.twig.class">Symfony\Bundle\TwigBundle\Debug\TimedTwigEngine</parameter>
     <parameter key="twig.options" type="collection">
@@ -314,7 +339,7 @@
         <parameter>Symfony\Bundle\TwigBundle\TwigDefaultEscapingStrategy</parameter>
         <parameter>guess</parameter>
       </parameter>
-      <parameter key="cache">D:\xampp\htdocs\BestTrip\app\cache\dev/twig</parameter>
+      <parameter key="cache">D:/xampp/htdocs/BestTrip/app/cache/dev/twig</parameter>
       <parameter key="charset">UTF-8</parameter>
       <parameter key="paths" type="collection"/>
     </parameter>
@@ -367,7 +392,7 @@
     <parameter key="swiftmailer.mailer.default.transport.smtp.auth_mode">null</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.timeout">30</parameter>
     <parameter key="swiftmailer.mailer.default.transport.smtp.source_ip">null</parameter>
-    <parameter key="swiftmailer.spool.default.memory.path">D:\xampp\htdocs\BestTrip\app\cache\dev/swiftmailer/spool/default</parameter>
+    <parameter key="swiftmailer.spool.default.memory.path">D:/xampp/htdocs/BestTrip/app/cache/dev/swiftmailer/spool/default</parameter>
     <parameter key="swiftmailer.mailer.default.spool.enabled">true</parameter>
     <parameter key="swiftmailer.mailer.default.plugin.impersonate">null</parameter>
     <parameter key="swiftmailer.mailer.default.single_address">null</parameter>
@@ -391,7 +416,7 @@
     <parameter key="assetic.worker.ensure_filter.class">Assetic\Factory\Worker\EnsureFilterWorker</parameter>
     <parameter key="assetic.value_supplier.class">Symfony\Bundle\AsseticBundle\DefaultValueSupplier</parameter>
     <parameter key="assetic.node.paths" type="collection"/>
-    <parameter key="assetic.cache_dir">D:\xampp\htdocs\BestTrip\app\cache\dev/assetic</parameter>
+    <parameter key="assetic.cache_dir">D:/xampp/htdocs/BestTrip/app/cache/dev/assetic</parameter>
     <parameter key="assetic.bundles" type="collection"/>
     <parameter key="assetic.twig_extension.class">Symfony\Bundle\AsseticBundle\Twig\AsseticExtension</parameter>
     <parameter key="assetic.twig_formula_loader.class">Assetic\Extension\Twig\TwigFormulaLoader</parameter>
@@ -429,7 +454,12 @@
       <parameter key="default">doctrine.orm.default_entity_manager</parameter>
     </parameter>
     <parameter key="doctrine.default_entity_manager">default</parameter>
-    <parameter key="doctrine.dbal.connection_factory.types" type="collection"/>
+    <parameter key="doctrine.dbal.connection_factory.types" type="collection">
+      <parameter key="json" type="collection">
+        <parameter key="class">Sonata\Doctrine\Types\JsonType</parameter>
+        <parameter key="commented">true</parameter>
+      </parameter>
+    </parameter>
     <parameter key="doctrine.connections" type="collection">
       <parameter key="default">doctrine.dbal.default_connection</parameter>
     </parameter>
@@ -469,7 +499,7 @@
     <parameter key="doctrine.orm.naming_strategy.default.class">Doctrine\ORM\Mapping\DefaultNamingStrategy</parameter>
     <parameter key="doctrine.orm.naming_strategy.underscore.class">Doctrine\ORM\Mapping\UnderscoreNamingStrategy</parameter>
     <parameter key="doctrine.orm.auto_generate_proxy_classes">true</parameter>
-    <parameter key="doctrine.orm.proxy_dir">D:\xampp\htdocs\BestTrip\app\cache\dev/doctrine/orm/Proxies</parameter>
+    <parameter key="doctrine.orm.proxy_dir">D:/xampp/htdocs/BestTrip/app/cache/dev/doctrine/orm/Proxies</parameter>
     <parameter key="doctrine.orm.proxy_namespace">Proxies</parameter>
     <parameter key="sensio_framework_extra.view.guesser.class">Sensio\Bundle\FrameworkExtraBundle\Templating\TemplateGuesser</parameter>
     <parameter key="sensio_framework_extra.controller.listener.class">Sensio\Bundle\FrameworkExtraBundle\EventListener\ControllerListener</parameter>
@@ -505,11 +535,115 @@
         <parameter key="cache">sonata.cache.noop</parameter>
         <parameter key="settings" type="collection"/>
       </parameter>
+      <parameter key="sonata.block.service.text" type="collection">
+        <parameter key="contexts" type="collection">
+          <parameter>cms</parameter>
+        </parameter>
+        <parameter key="cache">sonata.cache.noop</parameter>
+        <parameter key="settings" type="collection"/>
+      </parameter>
+      <parameter key="sonata.block.service.action" type="collection">
+        <parameter key="contexts" type="collection">
+          <parameter>cms</parameter>
+        </parameter>
+        <parameter key="cache">sonata.cache.noop</parameter>
+        <parameter key="settings" type="collection"/>
+      </parameter>
+      <parameter key="sonata.block.service.rss" type="collection">
+        <parameter key="contexts" type="collection">
+          <parameter>cms</parameter>
+        </parameter>
+        <parameter key="cache">sonata.cache.noop</parameter>
+        <parameter key="settings" type="collection"/>
+      </parameter>
     </parameter>
     <parameter key="sonata_block.blocks_by_class" type="collection"/>
     <parameter key="sonata_block.cache_blocks" type="collection">
       <parameter key="by_type" type="collection">
         <parameter key="sonata.admin.block.admin_list">sonata.cache.noop</parameter>
+        <parameter key="sonata.block.service.text">sonata.cache.noop</parameter>
+        <parameter key="sonata.block.service.action">sonata.cache.noop</parameter>
+        <parameter key="sonata.block.service.rss">sonata.cache.noop</parameter>
+      </parameter>
+    </parameter>
+    <parameter key="fos_user.validator.password.class">FOS\UserBundle\Validator\PasswordValidator</parameter>
+    <parameter key="fos_user.validator.unique.class">FOS\UserBundle\Validator\UniqueValidator</parameter>
+    <parameter key="fos_user.security.interactive_login_listener.class">FOS\UserBundle\Security\InteractiveLoginListener</parameter>
+    <parameter key="fos_user.security.login_manager.class">FOS\UserBundle\Security\LoginManager</parameter>
+    <parameter key="fos_user.resetting.email.template">FOSUserBundle:Resetting:email.txt.twig</parameter>
+    <parameter key="fos_user.registration.confirmation.template">FOSUserBundle:Registration:email.txt.twig</parameter>
+    <parameter key="fos_user.storage">orm</parameter>
+    <parameter key="fos_user.firewall_name">main</parameter>
+    <parameter key="fos_user.model_manager_name">null</parameter>
+    <parameter key="fos_user.model.user.class">Application\Sonata\UserBundle\Entity\User</parameter>
+    <parameter key="fos_user.template.engine">twig</parameter>
+    <parameter key="fos_user.profile.form.type">fos_user_profile</parameter>
+    <parameter key="fos_user.profile.form.name">fos_user_profile_form</parameter>
+    <parameter key="fos_user.profile.form.validation_groups" type="collection">
+      <parameter>Profile</parameter>
+      <parameter>Default</parameter>
+    </parameter>
+    <parameter key="fos_user.registration.confirmation.from_email" type="collection">
+      <parameter key="webmaster@example.com">webmaster</parameter>
+    </parameter>
+    <parameter key="fos_user.registration.confirmation.enabled">false</parameter>
+    <parameter key="fos_user.registration.form.type">fos_user_registration</parameter>
+    <parameter key="fos_user.registration.form.name">fos_user_registration_form</parameter>
+    <parameter key="fos_user.registration.form.validation_groups" type="collection">
+      <parameter>Registration</parameter>
+      <parameter>Default</parameter>
+    </parameter>
+    <parameter key="fos_user.change_password.form.type">fos_user_change_password</parameter>
+    <parameter key="fos_user.change_password.form.name">fos_user_change_password_form</parameter>
+    <parameter key="fos_user.change_password.form.validation_groups" type="collection">
+      <parameter>ChangePassword</parameter>
+      <parameter>Default</parameter>
+    </parameter>
+    <parameter key="fos_user.resetting.email.from_email" type="collection">
+      <parameter key="webmaster@example.com">webmaster</parameter>
+    </parameter>
+    <parameter key="fos_user.resetting.token_ttl">86400</parameter>
+    <parameter key="fos_user.resetting.form.type">fos_user_resetting</parameter>
+    <parameter key="fos_user.resetting.form.name">fos_user_resetting_form</parameter>
+    <parameter key="fos_user.resetting.form.validation_groups" type="collection">
+      <parameter>ResetPassword</parameter>
+      <parameter>Default</parameter>
+    </parameter>
+    <parameter key="fos_user.group_manager.class">FOS\UserBundle\Doctrine\GroupManager</parameter>
+    <parameter key="fos_user.model.group.class">Application\Sonata\UserBundle\Entity\Group</parameter>
+    <parameter key="fos_user.group.form.type">fos_user_group</parameter>
+    <parameter key="fos_user.group.form.name">fos_user_group_form</parameter>
+    <parameter key="fos_user.group.form.validation_groups" type="collection">
+      <parameter>Registration</parameter>
+      <parameter>Default</parameter>
+    </parameter>
+    <parameter key="sonata.user.admin.groupname">sonata_user</parameter>
+    <parameter key="security.acl.user_voter.class">Sonata\UserBundle\Security\Authorization\Voter\UserAclVoter</parameter>
+    <parameter key="sonata.user.admin.user.class">Sonata\UserBundle\Admin\Entity\UserAdmin</parameter>
+    <parameter key="sonata.user.admin.group.class">Sonata\UserBundle\Admin\Entity\GroupAdmin</parameter>
+    <parameter key="sonata.user.admin.user.entity">Application\Sonata\UserBundle\Entity\User</parameter>
+    <parameter key="sonata.user.admin.group.entity">Application\Sonata\UserBundle\Entity\Group</parameter>
+    <parameter key="sonata.user.admin.user.translation_domain">SonataUserBundle</parameter>
+    <parameter key="sonata.user.admin.group.translation_domain">SonataUserBundle</parameter>
+    <parameter key="sonata.user.admin.user.controller">SonataAdminBundle:CRUD</parameter>
+    <parameter key="sonata.user.admin.group.controller">SonataAdminBundle:CRUD</parameter>
+    <parameter key="sonata.user.impersonating">false</parameter>
+    <parameter key="sonata.user.google.authenticator.enabled">false</parameter>
+    <parameter key="sonata.user.profile.form.type">sonata_user_profile</parameter>
+    <parameter key="sonata.user.profile.form.name">sonata_user_profile_form</parameter>
+    <parameter key="sonata.user.profile.form.validation_groups" type="collection">
+      <parameter>Profile</parameter>
+      <parameter>Default</parameter>
+    </parameter>
+    <parameter key="sonata.user.register.confirm.redirect_route">sonata_user_profile_show</parameter>
+    <parameter key="sonata.user.register.confirm.redirect_route_params" type="collection"/>
+    <parameter key="sonata.user.configuration.profile_blocks" type="collection">
+      <parameter type="collection">
+        <parameter key="position">left</parameter>
+        <parameter key="settings" type="collection">
+          <parameter key="content">&lt;h2&gt;Welcome!&lt;/h2&gt; This is a sample user profile dashboard, feel free to override it in the configuration!</parameter>
+        </parameter>
+        <parameter key="type">sonata.block.service.text</parameter>
       </parameter>
     </parameter>
     <parameter key="knp_menu.factory.class">Knp\Menu\MenuFactory</parameter>
@@ -583,7 +717,7 @@
       </parameter>
     </parameter>
     <parameter key="sonata.admin.configuration.templates" type="collection">
-      <parameter key="user_block">SonataAdminBundle:Core:user_block.html.twig</parameter>
+      <parameter key="user_block">SonataUserBundle:Admin/Core:user_block.html.twig</parameter>
       <parameter key="add_block">SonataAdminBundle:Core:add_block.html.twig</parameter>
       <parameter key="layout">SonataAdminBundle::standard_layout.html.twig</parameter>
       <parameter key="ajax">SonataAdminBundle::ajax_layout.html.twig</parameter>
@@ -621,7 +755,7 @@
         <parameter key="type">sonata.admin.block.admin_list</parameter>
       </parameter>
     </parameter>
-    <parameter key="sonata.admin.security.acl_user_manager">null</parameter>
+    <parameter key="sonata.admin.security.acl_user_manager">fos_user.user_manager</parameter>
     <parameter key="sonata.admin.configuration.security.information" type="collection"/>
     <parameter key="sonata.admin.configuration.security.admin_permissions" type="collection">
       <parameter>CREATE</parameter>
@@ -783,7 +917,7 @@
       </call>
       <call method="setTemplates">
         <argument type="collection">
-          <argument key="user_block">SonataAdminBundle:Core:user_block.html.twig</argument>
+          <argument key="user_block">SonataUserBundle:Admin/Core:user_block.html.twig</argument>
           <argument key="add_block">SonataAdminBundle:Core:add_block.html.twig</argument>
           <argument key="layout">SonataAdminBundle::standard_layout.html.twig</argument>
           <argument key="ajax">SonataAdminBundle::ajax_layout.html.twig</argument>
@@ -889,7 +1023,7 @@
       </call>
       <call method="setTemplates">
         <argument type="collection">
-          <argument key="user_block">SonataAdminBundle:Core:user_block.html.twig</argument>
+          <argument key="user_block">SonataUserBundle:Admin/Core:user_block.html.twig</argument>
           <argument key="add_block">SonataAdminBundle:Core:add_block.html.twig</argument>
           <argument key="layout">SonataAdminBundle::standard_layout.html.twig</argument>
           <argument key="ajax">SonataAdminBundle::ajax_layout.html.twig</argument>
@@ -985,6 +1119,14 @@
         <argument type="collection">
           <argument>sonata.block.cache.handler.default</argument>
           <argument>onKernelResponse</argument>
+        </argument>
+        <argument>0</argument>
+      </call>
+      <call method="addListenerService">
+        <argument>security.interactive_login</argument>
+        <argument type="collection">
+          <argument>fos_user.security.interactive_login_listener</argument>
+          <argument>onSecurityInteractiveLogin</argument>
         </argument>
         <argument>0</argument>
       </call>
@@ -1222,7 +1364,7 @@
         </argument>
       </argument>
       <argument type="collection">
-        <argument key="cache_dir">D:\xampp\htdocs\BestTrip\app\cache\dev/translations</argument>
+        <argument key="cache_dir">D:/xampp/htdocs/BestTrip/app/cache/dev/translations</argument>
         <argument key="debug">true</argument>
       </argument>
       <call method="setFallbackLocales">
@@ -2155,6 +2297,474 @@
         <argument>SonataCoreBundle</argument>
       </call>
       <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.bg.yml</argument>
+        <argument>bg</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.ca.yml</argument>
+        <argument>ca</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.cs.yml</argument>
+        <argument>cs</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.da.yml</argument>
+        <argument>da</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.de.yml</argument>
+        <argument>de</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.en.yml</argument>
+        <argument>en</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.es.yml</argument>
+        <argument>es</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.et.yml</argument>
+        <argument>et</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.eu.yml</argument>
+        <argument>eu</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.fa.yml</argument>
+        <argument>fa</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.fi.yml</argument>
+        <argument>fi</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.fr.yml</argument>
+        <argument>fr</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.hr.yml</argument>
+        <argument>hr</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.hu.yml</argument>
+        <argument>hu</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.it.yml</argument>
+        <argument>it</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.ja.yml</argument>
+        <argument>ja</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.lb.yml</argument>
+        <argument>lb</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.lt.yml</argument>
+        <argument>lt</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.lv.yml</argument>
+        <argument>lv</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.nl.yml</argument>
+        <argument>nl</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.pl.yml</argument>
+        <argument>pl</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.pt_BR.yml</argument>
+        <argument>pt_BR</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.pt_PT.yml</argument>
+        <argument>pt_PT</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.ro.yml</argument>
+        <argument>ro</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.ru.yml</argument>
+        <argument>ru</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.sk.yml</argument>
+        <argument>sk</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.sl.yml</argument>
+        <argument>sl</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.sr_Latn.yml</argument>
+        <argument>sr_Latn</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.sv.yml</argument>
+        <argument>sv</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.tr.yml</argument>
+        <argument>tr</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.uk.yml</argument>
+        <argument>uk</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\FOSUserBundle.zh_CN.yml</argument>
+        <argument>zh_CN</argument>
+        <argument>FOSUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.bg.yml</argument>
+        <argument>bg</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.cs.yml</argument>
+        <argument>cs</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.da.yml</argument>
+        <argument>da</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.de.yml</argument>
+        <argument>de</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.en.yml</argument>
+        <argument>en</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.es.yml</argument>
+        <argument>es</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.eu.yml</argument>
+        <argument>eu</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.fa.yml</argument>
+        <argument>fa</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.fi.yml</argument>
+        <argument>fi</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.fr.yml</argument>
+        <argument>fr</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.hr.yml</argument>
+        <argument>hr</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.hu.yml</argument>
+        <argument>hu</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.it.yml</argument>
+        <argument>it</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.ja.yml</argument>
+        <argument>ja</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.lt.yml</argument>
+        <argument>lt</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.lv.yml</argument>
+        <argument>lv</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.nl.yml</argument>
+        <argument>nl</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.pl.yml</argument>
+        <argument>pl</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.pt.yml</argument>
+        <argument>pt</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.pt_BR.yml</argument>
+        <argument>pt_BR</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.ru.yml</argument>
+        <argument>ru</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.sk.yml</argument>
+        <argument>sk</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.sl.yml</argument>
+        <argument>sl</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.sr_Latn.yml</argument>
+        <argument>sr_Latn</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.sv.yml</argument>
+        <argument>sv</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.tr.yml</argument>
+        <argument>tr</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.uk.yml</argument>
+        <argument>uk</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>yml</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/translations\validators.zh_CN.yml</argument>
+        <argument>zh_CN</argument>
+        <argument>validators</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\sonata-project\user-bundle/Resources/translations\SonataUserBundle.bg.xliff</argument>
+        <argument>bg</argument>
+        <argument>SonataUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\sonata-project\user-bundle/Resources/translations\SonataUserBundle.ca.xliff</argument>
+        <argument>ca</argument>
+        <argument>SonataUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\sonata-project\user-bundle/Resources/translations\SonataUserBundle.cs.xliff</argument>
+        <argument>cs</argument>
+        <argument>SonataUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\sonata-project\user-bundle/Resources/translations\SonataUserBundle.de.xliff</argument>
+        <argument>de</argument>
+        <argument>SonataUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\sonata-project\user-bundle/Resources/translations\SonataUserBundle.en.xliff</argument>
+        <argument>en</argument>
+        <argument>SonataUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\sonata-project\user-bundle/Resources/translations\SonataUserBundle.es.xliff</argument>
+        <argument>es</argument>
+        <argument>SonataUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\sonata-project\user-bundle/Resources/translations\SonataUserBundle.fa.xliff</argument>
+        <argument>fa</argument>
+        <argument>SonataUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\sonata-project\user-bundle/Resources/translations\SonataUserBundle.fr.xliff</argument>
+        <argument>fr</argument>
+        <argument>SonataUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\sonata-project\user-bundle/Resources/translations\SonataUserBundle.it.xliff</argument>
+        <argument>it</argument>
+        <argument>SonataUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\sonata-project\user-bundle/Resources/translations\SonataUserBundle.lt.xliff</argument>
+        <argument>lt</argument>
+        <argument>SonataUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\sonata-project\user-bundle/Resources/translations\SonataUserBundle.nl.xliff</argument>
+        <argument>nl</argument>
+        <argument>SonataUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\sonata-project\user-bundle/Resources/translations\SonataUserBundle.pl.xliff</argument>
+        <argument>pl</argument>
+        <argument>SonataUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\sonata-project\user-bundle/Resources/translations\SonataUserBundle.pt.xliff</argument>
+        <argument>pt</argument>
+        <argument>SonataUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\sonata-project\user-bundle/Resources/translations\SonataUserBundle.pt_BR.xliff</argument>
+        <argument>pt_BR</argument>
+        <argument>SonataUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\sonata-project\user-bundle/Resources/translations\SonataUserBundle.ru.xliff</argument>
+        <argument>ru</argument>
+        <argument>SonataUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\sonata-project\user-bundle/Resources/translations\SonataUserBundle.sk.xliff</argument>
+        <argument>sk</argument>
+        <argument>SonataUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\sonata-project\user-bundle/Resources/translations\SonataUserBundle.sl.xliff</argument>
+        <argument>sl</argument>
+        <argument>SonataUserBundle</argument>
+      </call>
+      <call method="addResource">
+        <argument>xliff</argument>
+        <argument>D:\xampp\htdocs\BestTrip\vendor\sonata-project\user-bundle/Resources/translations\SonataUserBundle.zh_TW.xliff</argument>
+        <argument>zh_TW</argument>
+        <argument>SonataUserBundle</argument>
+      </call>
+      <call method="addResource">
         <argument>xliff</argument>
         <argument>D:\xampp\htdocs\BestTrip\vendor\sonata-project\admin-bundle/Resources/translations\SonataAdminBundle.ar.xliff</argument>
         <argument>ar</argument>
@@ -2578,6 +3188,15 @@
               <argument key="sonata_type_equal">sonata.core.form.type.equal</argument>
               <argument key="sonata_block_service_choice">sonata.block.form.type.block</argument>
               <argument key="sonata_type_container_template_choice">sonata.block.form.type.container_template</argument>
+              <argument key="fos_user_username">fos_user.username_form_type</argument>
+              <argument key="fos_user_profile">fos_user.profile.form.type</argument>
+              <argument key="fos_user_registration">fos_user.registration.form.type</argument>
+              <argument key="fos_user_change_password">fos_user.change_password.form.type</argument>
+              <argument key="fos_user_resetting">fos_user.resetting.form.type</argument>
+              <argument key="fos_user_group">fos_user.group.form.type</argument>
+              <argument key="sonata_security_roles">sonata.user.form.type.security_roles</argument>
+              <argument key="sonata_user_profile">sonata.user.profile.form.type</argument>
+              <argument key="sonata_user_gender">sonata.user.form.gender_list</argument>
               <argument key="sonata_type_admin">sonata.admin.form.type.admin</argument>
               <argument key="sonata_type_model">sonata.admin.form.type.model_choice</argument>
               <argument key="sonata_type_model_list">sonata.admin.form.type.model_list</argument>
@@ -2748,7 +3367,7 @@
     <service id="templating.filename_parser" class="Symfony\Bundle\FrameworkBundle\Templating\TemplateFilenameParser"/>
     <service id="templating.locator" class="Symfony\Bundle\FrameworkBundle\Templating\Loader\TemplateLocator" public="false">
       <argument type="service" id="file_locator"/>
-      <argument>D:\xampp\htdocs\BestTrip\app\cache\dev</argument>
+      <argument>D:/xampp/htdocs/BestTrip/app/cache/dev</argument>
     </service>
     <service id="templating.helper.slots" class="Symfony\Component\Templating\Helper\SlotsHelper">
       <tag name="templating.helper" alias="slots"/>
@@ -2819,6 +3438,12 @@
       <argument>validators</argument>
       <argument type="collection">
         <argument type="service" id="doctrine.orm.validator_initializer"/>
+        <argument type="service">
+          <service class="FOS\UserBundle\Validator\Initializer" public="false">
+            <tag name="validator.initializer"/>
+            <argument type="service" id="fos_user.user_manager"/>
+          </service>
+        </argument>
       </argument>
     </service>
     <service id="validator.mapping.class_metadata_factory" class="Symfony\Component\Validator\Mapping\ClassMetadataFactory" public="false">
@@ -2837,6 +3462,8 @@
               <service class="Symfony\Component\Validator\Mapping\Loader\XmlFilesLoader" public="false">
                 <argument type="collection">
                   <argument>D:\xampp\htdocs\BestTrip\vendor\symfony\symfony\src\Symfony\Component\Form/Resources/config/validation.xml</argument>
+                  <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle\Resources\config\validation.xml</argument>
+                  <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle\Resources\config\storage-validation\orm.xml</argument>
                 </argument>
               </service>
             </argument>
@@ -2868,7 +3495,7 @@
       <tag name="monolog.logger" channel="profiler"/>
       <argument type="service">
         <service class="Symfony\Component\HttpKernel\Profiler\FileProfilerStorage" public="false">
-          <argument>file:D:\xampp\htdocs\BestTrip\app\cache\dev/profiler</argument>
+          <argument>file:D:/xampp/htdocs/BestTrip/app/cache/dev/profiler</argument>
           <argument></argument>
           <argument></argument>
           <argument>86400</argument>
@@ -3094,13 +3721,30 @@
       <argument type="collection">
         <argument type="service">
           <service class="Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider" public="false">
-            <argument type="service" id="security.user.provider.concrete.in_memory"/>
-            <argument type="service">
-              <service class="Symfony\Component\Security\Core\User\UserChecker" public="false"/>
-            </argument>
-            <argument>secured_area</argument>
+            <argument type="service" id="fos_user.user_manager"/>
+            <argument type="service" id="security.user_checker"/>
+            <argument>admin</argument>
             <argument type="service" id="security.encoder_factory"/>
             <argument>true</argument>
+          </service>
+        </argument>
+        <argument type="service">
+          <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
+            <argument>5572b17d86d2c</argument>
+          </service>
+        </argument>
+        <argument type="service">
+          <service class="Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider" public="false">
+            <argument type="service" id="fos_user.user_manager"/>
+            <argument type="service" id="security.user_checker"/>
+            <argument>main</argument>
+            <argument type="service" id="security.encoder_factory"/>
+            <argument>true</argument>
+          </service>
+        </argument>
+        <argument type="service">
+          <service class="Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider" public="false">
+            <argument>5572b17d86d2c</argument>
           </service>
         </argument>
       </argument>
@@ -3113,6 +3757,10 @@
       <argument>Symfony\Component\Security\Core\Authentication\Token\AnonymousToken</argument>
       <argument>Symfony\Component\Security\Core\Authentication\Token\RememberMeToken</argument>
     </service>
+    <service id="security.authentication.session_strategy" class="Symfony\Component\Security\Http\Session\SessionAuthenticationStrategy" public="false">
+      <argument>migrate</argument>
+    </service>
+    <service id="security.user_checker" class="Symfony\Component\Security\Core\User\UserChecker" public="false"/>
     <service id="security.access.decision_manager" class="Symfony\Component\Security\Core\Authorization\AccessDecisionManager" public="false">
       <argument type="collection">
         <argument type="service">
@@ -3123,11 +3771,14 @@
                 <argument type="collection">
                   <argument key="ROLE_ADMIN" type="collection">
                     <argument>ROLE_USER</argument>
+                    <argument>ROLE_SONATA_ADMIN</argument>
                   </argument>
                   <argument key="ROLE_SUPER_ADMIN" type="collection">
-                    <argument>ROLE_USER</argument>
                     <argument>ROLE_ADMIN</argument>
                     <argument>ROLE_ALLOWED_TO_SWITCH</argument>
+                  </argument>
+                  <argument key="SONATA" type="collection">
+                    <argument>ROLE_SONATA_PAGE_ADMIN_PAGE_EDIT</argument>
                   </argument>
                 </argument>
               </service>
@@ -3138,6 +3789,79 @@
           <service class="Symfony\Component\Security\Core\Authorization\Voter\AuthenticatedVoter" public="false">
             <tag name="security.voter" priority="250"/>
             <argument type="service" id="security.authentication.trust_resolver"/>
+          </service>
+        </argument>
+        <argument type="service">
+          <service class="Sonata\UserBundle\Security\Authorization\Voter\UserAclVoter" public="false">
+            <tag name="monolog.logger" channel="security"/>
+            <tag name="security.voter" priority="255"/>
+            <argument type="service" id="security.acl.provider"/>
+            <argument type="service">
+              <service class="Symfony\Component\Security\Acl\Domain\ObjectIdentityRetrievalStrategy" public="false"/>
+            </argument>
+            <argument type="service">
+              <service class="Symfony\Component\Security\Acl\Domain\SecurityIdentityRetrievalStrategy" public="false">
+                <argument type="service">
+                  <service class="Symfony\Component\Security\Core\Role\RoleHierarchy" public="false">
+                    <argument type="collection">
+                      <argument key="ROLE_ADMIN" type="collection">
+                        <argument>ROLE_USER</argument>
+                        <argument>ROLE_SONATA_ADMIN</argument>
+                      </argument>
+                      <argument key="ROLE_SUPER_ADMIN" type="collection">
+                        <argument>ROLE_ADMIN</argument>
+                        <argument>ROLE_ALLOWED_TO_SWITCH</argument>
+                      </argument>
+                      <argument key="SONATA" type="collection">
+                        <argument>ROLE_SONATA_PAGE_ADMIN_PAGE_EDIT</argument>
+                      </argument>
+                    </argument>
+                  </service>
+                </argument>
+                <argument type="service" id="security.authentication.trust_resolver"/>
+              </service>
+            </argument>
+            <argument type="service">
+              <service class="Symfony\Component\Security\Acl\Permission\BasicPermissionMap" public="false"/>
+            </argument>
+            <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+          </service>
+        </argument>
+        <argument type="service">
+          <service class="Symfony\Component\Security\Acl\Voter\AclVoter" public="false">
+            <tag name="monolog.logger" channel="security"/>
+            <tag name="security.voter" priority="255"/>
+            <argument type="service" id="security.acl.provider"/>
+            <argument type="service">
+              <service class="Symfony\Component\Security\Acl\Domain\ObjectIdentityRetrievalStrategy" public="false"/>
+            </argument>
+            <argument type="service">
+              <service class="Symfony\Component\Security\Acl\Domain\SecurityIdentityRetrievalStrategy" public="false">
+                <argument type="service">
+                  <service class="Symfony\Component\Security\Core\Role\RoleHierarchy" public="false">
+                    <argument type="collection">
+                      <argument key="ROLE_ADMIN" type="collection">
+                        <argument>ROLE_USER</argument>
+                        <argument>ROLE_SONATA_ADMIN</argument>
+                      </argument>
+                      <argument key="ROLE_SUPER_ADMIN" type="collection">
+                        <argument>ROLE_ADMIN</argument>
+                        <argument>ROLE_ALLOWED_TO_SWITCH</argument>
+                      </argument>
+                      <argument key="SONATA" type="collection">
+                        <argument>ROLE_SONATA_PAGE_ADMIN_PAGE_EDIT</argument>
+                      </argument>
+                    </argument>
+                  </service>
+                </argument>
+                <argument type="service" id="security.authentication.trust_resolver"/>
+              </service>
+            </argument>
+            <argument type="service">
+              <service class="Symfony\Component\Security\Acl\Permission\BasicPermissionMap" public="false"/>
+            </argument>
+            <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+            <argument>true</argument>
           </service>
         </argument>
       </argument>
@@ -3156,20 +3880,24 @@
                 <argument>^/(_(profiler|wdt)|css|images|js)/</argument>
               </service>
             </argument>
-            <argument key="security.firewall.map.context.login" type="service">
+            <argument key="security.firewall.map.context.admin" type="service">
               <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-                <argument>^/demo/secured/login$</argument>
+                <argument>/admin(.*)</argument>
               </service>
             </argument>
-            <argument key="security.firewall.map.context.secured_area" type="service">
+            <argument key="security.firewall.map.context.main" type="service">
               <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-                <argument>^/demo/secured/</argument>
+                <argument>.*</argument>
               </service>
             </argument>
           </argument>
         </service>
       </argument>
       <argument type="service" id="event_dispatcher"/>
+    </service>
+    <service id="security.http_utils" class="Symfony\Component\Security\Http\HttpUtils" public="false">
+      <argument type="service" id="router" on-invalid="null"/>
+      <argument type="service" id="router" on-invalid="null"/>
     </service>
     <service id="security.validator.user_password" class="Symfony\Component\Security\Core\Validator\Constraints\UserPasswordValidator">
       <tag name="validator.constraint_validator" alias="security.validator.user_password"/>
@@ -3178,8 +3906,118 @@
     </service>
     <service id="security.secure_random" class="Symfony\Component\Security\Core\Util\SecureRandom">
       <tag name="monolog.logger" channel="security"/>
-      <argument>D:\xampp\htdocs\BestTrip\app\cache\dev/secure_random.seed</argument>
+      <argument>D:/xampp/htdocs/BestTrip/app/cache/dev/secure_random.seed</argument>
       <argument type="service" id="monolog.logger.security" on-invalid="ignore"/>
+    </service>
+    <service id="security.channel_listener" class="Symfony\Component\Security\Http\Firewall\ChannelListener" public="false">
+      <tag name="monolog.logger" channel="security"/>
+      <argument type="service" id="security.access_map"/>
+      <argument type="service">
+        <service class="Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint" public="false">
+          <argument>80</argument>
+          <argument>443</argument>
+        </service>
+      </argument>
+      <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+    </service>
+    <service id="security.access_map" class="Symfony\Component\Security\Http\AccessMap" public="false">
+      <call method="add">
+        <argument type="service">
+          <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+            <argument>^/login$</argument>
+          </service>
+        </argument>
+        <argument type="collection">
+          <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service">
+          <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+            <argument>^/register</argument>
+          </service>
+        </argument>
+        <argument type="collection">
+          <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service">
+          <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+            <argument>^/resetting</argument>
+          </service>
+        </argument>
+        <argument type="collection">
+          <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service">
+          <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+            <argument>^/admin/login$</argument>
+          </service>
+        </argument>
+        <argument type="collection">
+          <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service">
+          <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+            <argument>^/admin/logout$</argument>
+          </service>
+        </argument>
+        <argument type="collection">
+          <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service">
+          <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+            <argument>^/admin/login_check$</argument>
+          </service>
+        </argument>
+        <argument type="collection">
+          <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service">
+          <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+            <argument>^/admin/</argument>
+          </service>
+        </argument>
+        <argument type="collection">
+          <argument>ROLE_ADMIN</argument>
+          <argument>ROLE_SONATA_ADMIN</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
+        <argument type="service">
+          <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
+            <argument>^/.*</argument>
+          </service>
+        </argument>
+        <argument type="collection">
+          <argument>IS_AUTHENTICATED_ANONYMOUSLY</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+    </service>
+    <service id="security.logout.handler.session" class="Symfony\Component\Security\Http\Logout\SessionLogoutHandler" public="false"/>
+    <service id="security.access_listener" class="Symfony\Component\Security\Http\Firewall\AccessListener" public="false">
+      <tag name="monolog.logger" channel="security"/>
+      <argument type="service" id="security.context"/>
+      <argument type="service" id="security.access.decision_manager"/>
+      <argument type="service" id="security.access_map"/>
+      <argument type="service" id="security.authentication.manager"/>
     </service>
     <service id="security.rememberme.response_listener" class="Symfony\Component\Security\Http\RememberMe\ResponseListener">
       <tag name="kernel.event_subscriber"/>
@@ -3189,8 +4027,15 @@
       <argument type="service" id="service_container"/>
       <argument type="service" id="router"/>
       <call method="registerListener">
-        <argument>secured_area</argument>
-        <argument>_demo_logout</argument>
+        <argument>admin</argument>
+        <argument>/admin/logout</argument>
+        <argument>logout</argument>
+        <argument>_csrf_token</argument>
+        <argument>null</argument>
+      </call>
+      <call method="registerListener">
+        <argument>main</argument>
+        <argument>/logout</argument>
         <argument>logout</argument>
         <argument>_csrf_token</argument>
         <argument>null</argument>
@@ -3200,158 +4045,72 @@
       <tag name="templating.helper" alias="security"/>
       <argument type="service" id="security.context" on-invalid="ignore"/>
     </service>
-    <service id="security.user.provider.concrete.in_memory" class="Symfony\Component\Security\Core\User\InMemoryUserProvider" public="false">
-      <call method="createUser">
-        <argument type="service">
-          <service class="Symfony\Component\Security\Core\User\User" public="false">
-            <argument>user</argument>
-            <argument>userpass</argument>
-            <argument type="collection">
-              <argument>ROLE_USER</argument>
-            </argument>
-          </service>
-        </argument>
-      </call>
-      <call method="createUser">
-        <argument type="service">
-          <service class="Symfony\Component\Security\Core\User\User" public="false">
-            <argument>admin</argument>
-            <argument>adminpass</argument>
-            <argument type="collection">
-              <argument>ROLE_ADMIN</argument>
-            </argument>
-          </service>
-        </argument>
-      </call>
-    </service>
     <service id="security.firewall.map.context.dev" class="Symfony\Bundle\SecurityBundle\Security\FirewallContext">
       <argument type="collection"/>
       <argument>null</argument>
     </service>
-    <service id="security.firewall.map.context.login" class="Symfony\Bundle\SecurityBundle\Security\FirewallContext">
-      <argument type="collection"/>
-      <argument>null</argument>
-    </service>
-    <service id="security.firewall.map.context.secured_area" class="Symfony\Bundle\SecurityBundle\Security\FirewallContext">
+    <service id="security.context_listener.0" class="Symfony\Component\Security\Http\Firewall\ContextListener" public="false">
+      <argument type="service" id="security.context"/>
       <argument type="collection">
-        <argument type="service">
-          <service class="Symfony\Component\Security\Http\Firewall\ChannelListener" public="false">
-            <tag name="monolog.logger" channel="security"/>
-            <argument type="service">
-              <service class="Symfony\Component\Security\Http\AccessMap" public="false">
-                <call method="add">
-                  <argument type="service">
-                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-                      <argument>^/demo/secured/hello/admin/</argument>
-                    </service>
-                  </argument>
-                  <argument type="collection">
-                    <argument>ROLE_ADMIN</argument>
-                  </argument>
-                  <argument>null</argument>
-                </call>
-              </service>
-            </argument>
-            <argument type="service">
-              <service class="Symfony\Component\Security\Http\EntryPoint\RetryAuthenticationEntryPoint" public="false">
-                <argument>80</argument>
-                <argument>443</argument>
-              </service>
-            </argument>
-            <argument type="service" id="monolog.logger.security" on-invalid="null"/>
-          </service>
-        </argument>
-        <argument type="service">
-          <service class="Symfony\Component\Security\Http\Firewall\ContextListener" public="false">
-            <argument type="service" id="security.context"/>
-            <argument type="collection">
-              <argument type="service" id="security.user.provider.concrete.in_memory"/>
-            </argument>
-            <argument>secured_area</argument>
-            <argument type="service" id="monolog.logger.security" on-invalid="null"/>
-            <argument type="service" id="event_dispatcher" on-invalid="null"/>
-          </service>
-        </argument>
+        <argument type="service" id="fos_user.user_manager"/>
+      </argument>
+      <argument>user</argument>
+      <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+      <argument type="service" id="event_dispatcher" on-invalid="null"/>
+    </service>
+    <service id="security.firewall.map.context.admin" class="Symfony\Bundle\SecurityBundle\Security\FirewallContext">
+      <argument type="collection">
+        <argument type="service" id="security.channel_listener"/>
+        <argument type="service" id="security.context_listener.0"/>
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\LogoutListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument type="service">
-              <service class="Symfony\Component\Security\Http\HttpUtils" public="false">
-                <argument type="service" id="router" on-invalid="null"/>
-                <argument type="service" id="router" on-invalid="null"/>
-              </service>
-            </argument>
+            <argument type="service" id="security.http_utils"/>
             <argument type="service">
               <service class="Symfony\Component\Security\Http\Logout\DefaultLogoutSuccessHandler" public="false">
-                <argument type="service">
-                  <service class="Symfony\Component\Security\Http\HttpUtils" public="false">
-                    <argument type="service" id="router" on-invalid="null"/>
-                    <argument type="service" id="router" on-invalid="null"/>
-                  </service>
-                </argument>
-                <argument>_demo</argument>
+                <argument type="service" id="security.http_utils"/>
+                <argument>/</argument>
               </service>
             </argument>
             <argument type="collection">
               <argument key="csrf_parameter">_csrf_token</argument>
               <argument key="intention">logout</argument>
-              <argument key="logout_path">_demo_logout</argument>
+              <argument key="logout_path">/admin/logout</argument>
             </argument>
             <call method="addHandler">
-              <argument type="service">
-                <service class="Symfony\Component\Security\Http\Logout\SessionLogoutHandler" public="false"/>
-              </argument>
+              <argument type="service" id="security.logout.handler.session"/>
             </call>
           </service>
         </argument>
         <argument type="service">
           <service class="Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener" public="false">
-            <tag name="security.remember_me_aware" id="secured_area" provider="security.user.provider.concrete.in_memory"/>
+            <tag name="security.remember_me_aware" id="admin" provider="security.user.provider.concrete.fos_userbundle"/>
             <argument type="service" id="security.context"/>
             <argument type="service" id="security.authentication.manager"/>
-            <argument type="service">
-              <service class="Symfony\Component\Security\Http\Session\SessionAuthenticationStrategy" public="false">
-                <argument>migrate</argument>
-              </service>
-            </argument>
-            <argument type="service">
-              <service class="Symfony\Component\Security\Http\HttpUtils" public="false">
-                <argument type="service" id="router" on-invalid="null"/>
-                <argument type="service" id="router" on-invalid="null"/>
-              </service>
-            </argument>
-            <argument>secured_area</argument>
+            <argument type="service" id="security.authentication.session_strategy"/>
+            <argument type="service" id="security.http_utils"/>
+            <argument>admin</argument>
             <argument type="service">
               <service class="Symfony\Component\Security\Http\Authentication\DefaultAuthenticationSuccessHandler" public="false">
-                <argument type="service">
-                  <service class="Symfony\Component\Security\Http\HttpUtils" public="false">
-                    <argument type="service" id="router" on-invalid="null"/>
-                    <argument type="service" id="router" on-invalid="null"/>
-                  </service>
-                </argument>
+                <argument type="service" id="security.http_utils"/>
                 <argument type="collection">
-                  <argument key="login_path">_demo_login</argument>
+                  <argument key="login_path">/admin/login</argument>
                   <argument key="always_use_default_target_path">false</argument>
                   <argument key="default_target_path">/</argument>
                   <argument key="target_path_parameter">_target_path</argument>
                   <argument key="use_referer">false</argument>
                 </argument>
                 <call method="setProviderKey">
-                  <argument>secured_area</argument>
+                  <argument>admin</argument>
                 </call>
               </service>
             </argument>
             <argument type="service">
               <service class="Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler" public="false">
                 <argument type="service" id="http_kernel"/>
-                <argument type="service">
-                  <service class="Symfony\Component\Security\Http\HttpUtils" public="false">
-                    <argument type="service" id="router" on-invalid="null"/>
-                    <argument type="service" id="router" on-invalid="null"/>
-                  </service>
-                </argument>
+                <argument type="service" id="security.http_utils"/>
                 <argument type="collection">
-                  <argument key="login_path">_demo_login</argument>
+                  <argument key="login_path">/admin/login</argument>
                   <argument key="failure_path">null</argument>
                   <argument key="failure_forward">false</argument>
                   <argument key="failure_path_parameter">_failure_path</argument>
@@ -3360,8 +4119,8 @@
               </service>
             </argument>
             <argument type="collection">
-              <argument key="check_path">_security_check</argument>
               <argument key="use_forward">false</argument>
+              <argument key="check_path">/admin/login_check</argument>
               <argument key="require_previous_session">true</argument>
               <argument key="username_parameter">_username</argument>
               <argument key="password_parameter">_password</argument>
@@ -3374,50 +4133,25 @@
           </service>
         </argument>
         <argument type="service">
-          <service class="Symfony\Component\Security\Http\Firewall\AccessListener" public="false">
-            <tag name="monolog.logger" channel="security"/>
+          <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
             <argument type="service" id="security.context"/>
-            <argument type="service" id="security.access.decision_manager"/>
-            <argument type="service">
-              <service class="Symfony\Component\Security\Http\AccessMap" public="false">
-                <call method="add">
-                  <argument type="service">
-                    <service class="Symfony\Component\HttpFoundation\RequestMatcher" public="false">
-                      <argument>^/demo/secured/hello/admin/</argument>
-                    </service>
-                  </argument>
-                  <argument type="collection">
-                    <argument>ROLE_ADMIN</argument>
-                  </argument>
-                  <argument>null</argument>
-                </call>
-              </service>
-            </argument>
-            <argument type="service" id="security.authentication.manager"/>
+            <argument>5572b17d86d2c</argument>
+            <argument type="service" id="monolog.logger.security" on-invalid="null"/>
           </service>
         </argument>
+        <argument type="service" id="security.access_listener"/>
       </argument>
       <argument type="service">
         <service class="Symfony\Component\Security\Http\Firewall\ExceptionListener" public="false">
           <argument type="service" id="security.context"/>
           <argument type="service" id="security.authentication.trust_resolver"/>
-          <argument type="service">
-            <service class="Symfony\Component\Security\Http\HttpUtils" public="false">
-              <argument type="service" id="router" on-invalid="null"/>
-              <argument type="service" id="router" on-invalid="null"/>
-            </service>
-          </argument>
-          <argument>secured_area</argument>
+          <argument type="service" id="security.http_utils"/>
+          <argument>admin</argument>
           <argument type="service">
             <service class="Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint" public="false">
               <argument type="service" id="http_kernel"/>
-              <argument type="service">
-                <service class="Symfony\Component\Security\Http\HttpUtils" public="false">
-                  <argument type="service" id="router" on-invalid="null"/>
-                  <argument type="service" id="router" on-invalid="null"/>
-                </service>
-              </argument>
-              <argument>_demo_login</argument>
+              <argument type="service" id="security.http_utils"/>
+              <argument>/admin/login</argument>
               <argument>false</argument>
             </service>
           </argument>
@@ -3426,6 +4160,123 @@
           <argument type="service" id="monolog.logger.security" on-invalid="null"/>
         </service>
       </argument>
+    </service>
+    <service id="security.firewall.map.context.main" class="Symfony\Bundle\SecurityBundle\Security\FirewallContext">
+      <argument type="collection">
+        <argument type="service" id="security.channel_listener"/>
+        <argument type="service" id="security.context_listener.0"/>
+        <argument type="service">
+          <service class="Symfony\Component\Security\Http\Firewall\LogoutListener" public="false">
+            <argument type="service" id="security.context"/>
+            <argument type="service" id="security.http_utils"/>
+            <argument type="service">
+              <service class="Symfony\Component\Security\Http\Logout\DefaultLogoutSuccessHandler" public="false">
+                <argument type="service" id="security.http_utils"/>
+                <argument>/</argument>
+              </service>
+            </argument>
+            <argument type="collection">
+              <argument key="csrf_parameter">_csrf_token</argument>
+              <argument key="intention">logout</argument>
+              <argument key="logout_path">/logout</argument>
+            </argument>
+            <call method="addHandler">
+              <argument type="service" id="security.logout.handler.session"/>
+            </call>
+          </service>
+        </argument>
+        <argument type="service">
+          <service class="Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener" public="false">
+            <tag name="security.remember_me_aware" id="main" provider="security.user.provider.concrete.fos_userbundle"/>
+            <argument type="service" id="security.context"/>
+            <argument type="service" id="security.authentication.manager"/>
+            <argument type="service" id="security.authentication.session_strategy"/>
+            <argument type="service" id="security.http_utils"/>
+            <argument>main</argument>
+            <argument type="service">
+              <service class="Symfony\Component\Security\Http\Authentication\DefaultAuthenticationSuccessHandler" public="false">
+                <argument type="service" id="security.http_utils"/>
+                <argument type="collection">
+                  <argument key="login_path">/login</argument>
+                  <argument key="always_use_default_target_path">false</argument>
+                  <argument key="default_target_path">/</argument>
+                  <argument key="target_path_parameter">_target_path</argument>
+                  <argument key="use_referer">false</argument>
+                </argument>
+                <call method="setProviderKey">
+                  <argument>main</argument>
+                </call>
+              </service>
+            </argument>
+            <argument type="service">
+              <service class="Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler" public="false">
+                <argument type="service" id="http_kernel"/>
+                <argument type="service" id="security.http_utils"/>
+                <argument type="collection">
+                  <argument key="login_path">/login</argument>
+                  <argument key="failure_path">null</argument>
+                  <argument key="failure_forward">false</argument>
+                  <argument key="failure_path_parameter">_failure_path</argument>
+                </argument>
+                <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+              </service>
+            </argument>
+            <argument type="collection">
+              <argument key="use_forward">false</argument>
+              <argument key="check_path">/login_check</argument>
+              <argument key="require_previous_session">true</argument>
+              <argument key="username_parameter">_username</argument>
+              <argument key="password_parameter">_password</argument>
+              <argument key="csrf_parameter">_csrf_token</argument>
+              <argument key="intention">authenticate</argument>
+              <argument key="post_only">true</argument>
+            </argument>
+            <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+            <argument type="service" id="event_dispatcher" on-invalid="null"/>
+          </service>
+        </argument>
+        <argument type="service">
+          <service class="Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener" public="false">
+            <argument type="service" id="security.context"/>
+            <argument>5572b17d86d2c</argument>
+            <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+          </service>
+        </argument>
+        <argument type="service" id="security.access_listener"/>
+      </argument>
+      <argument type="service">
+        <service class="Symfony\Component\Security\Http\Firewall\ExceptionListener" public="false">
+          <argument type="service" id="security.context"/>
+          <argument type="service" id="security.authentication.trust_resolver"/>
+          <argument type="service" id="security.http_utils"/>
+          <argument>main</argument>
+          <argument type="service">
+            <service class="Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint" public="false">
+              <argument type="service" id="http_kernel"/>
+              <argument type="service" id="security.http_utils"/>
+              <argument>/login</argument>
+              <argument>false</argument>
+            </service>
+          </argument>
+          <argument>null</argument>
+          <argument>null</argument>
+          <argument type="service" id="monolog.logger.security" on-invalid="null"/>
+        </service>
+      </argument>
+    </service>
+    <service id="security.acl.dbal.schema" class="Symfony\Component\Security\Acl\Dbal\Schema">
+      <argument type="collection">
+        <argument key="class_table_name">acl_classes</argument>
+        <argument key="entry_table_name">acl_entries</argument>
+        <argument key="oid_table_name">acl_object_identities</argument>
+        <argument key="oid_ancestors_table_name">acl_object_identity_ancestors</argument>
+        <argument key="sid_table_name">acl_security_identities</argument>
+      </argument>
+      <argument type="service" id="doctrine.dbal.default_connection"/>
+    </service>
+    <service id="security.acl.dbal.schema_listener" class="Symfony\Bundle\SecurityBundle\EventListener\AclSchemaListener">
+      <tag name="doctrine.event_listener" connection="default" event="postGenerateSchema" lazy="1"/>
+      <argument type="service" id="service_container"/>
     </service>
     <service id="twig" class="Twig_Environment">
       <argument type="service" id="twig.loader"/>
@@ -3437,7 +4288,7 @@
           <argument>Symfony\Bundle\TwigBundle\TwigDefaultEscapingStrategy</argument>
           <argument>guess</argument>
         </argument>
-        <argument key="cache">D:\xampp\htdocs\BestTrip\app\cache\dev/twig</argument>
+        <argument key="cache">D:/xampp/htdocs/BestTrip/app/cache/dev/twig</argument>
         <argument key="charset">UTF-8</argument>
         <argument key="paths" type="collection"/>
       </argument>
@@ -3524,6 +4375,7 @@
                   <service class="Symfony\Bridge\Twig\Form\TwigRendererEngine" public="false">
                     <argument type="collection">
                       <argument>form_div_layout.html.twig</argument>
+                      <argument>SonataUserBundle:Form:form_admin_fields.html.twig</argument>
                     </argument>
                   </service>
                 </argument>
@@ -3611,6 +4463,10 @@
         <argument>sonata_block</argument>
         <argument type="service" id="sonata.block.twig.global"/>
       </call>
+      <call method="addGlobal">
+        <argument>sonata_user</argument>
+        <argument type="service" id="sonata.user.twig.global"/>
+      </call>
     </service>
     <service id="twig.translation.extractor" class="Symfony\Bridge\Twig\Translation\TwigExtractor">
       <tag name="translation.extractor" alias="twig"/>
@@ -3674,7 +4530,7 @@
             </argument>
             <argument type="service">
               <service class="Assetic\Cache\ConfigCache" public="false">
-                <argument>D:\xampp\htdocs\BestTrip\app\cache\dev/assetic/config</argument>
+                <argument>D:/xampp/htdocs/BestTrip/app/cache/dev/assetic/config</argument>
               </service>
             </argument>
             <argument>true</argument>
@@ -3728,13 +4584,18 @@
       </call>
     </service>
     <service id="assetic.cache" class="Assetic\Cache\FilesystemCache" public="false">
-      <argument>D:\xampp\htdocs\BestTrip\app\cache\dev/assetic/assets</argument>
+      <argument>D:/xampp/htdocs/BestTrip/app/cache/dev/assetic/assets</argument>
     </service>
     <service id="assetic.request_listener" class="Symfony\Bundle\AsseticBundle\EventListener\RequestListener">
       <tag name="kernel.event_listener" event="kernel.request" method="onKernelRequest"/>
     </service>
     <service id="doctrine.dbal.connection_factory" class="Doctrine\Bundle\DoctrineBundle\ConnectionFactory">
-      <argument type="collection"/>
+      <argument type="collection">
+        <argument key="json" type="collection">
+          <argument key="class">Sonata\Doctrine\Types\JsonType</argument>
+          <argument key="commented">true</argument>
+        </argument>
+      </argument>
     </service>
     <service id="doctrine" class="Doctrine\Bundle\DoctrineBundle\Registry">
       <argument type="service" id="service_container"/>
@@ -3784,6 +4645,23 @@
       <argument type="service">
         <service class="Symfony\Bridge\Doctrine\ContainerAwareEventManager" public="false">
           <argument type="service" id="service_container"/>
+          <call method="addEventSubscriber">
+            <argument type="service">
+              <service class="FOS\UserBundle\Entity\UserListener" public="false">
+                <tag name="doctrine.event_subscriber"/>
+                <argument type="service" id="service_container"/>
+              </service>
+            </argument>
+          </call>
+          <call method="addEventSubscriber">
+            <argument type="service" id="sonata.easy_extends.doctrine.mapper"/>
+          </call>
+          <call method="addEventListener">
+            <argument type="collection">
+              <argument>postGenerateSchema</argument>
+            </argument>
+            <argument>security.acl.dbal.schema_listener</argument>
+          </call>
         </service>
       </argument>
       <argument type="collection"/>
@@ -3814,7 +4692,10 @@
         <service class="Doctrine\ORM\Configuration" public="false">
           <call method="setEntityNamespaces">
             <argument type="collection">
+              <argument key="FOSUserBundle">FOS\UserBundle\Entity</argument>
+              <argument key="SonataUserBundle">Sonata\UserBundle\Entity</argument>
               <argument key="AdminAdminBundle">Admin\AdminBundle\Entity</argument>
+              <argument key="ApplicationSonataUserBundle">Application\Sonata\UserBundle\Entity</argument>
             </argument>
           </call>
           <call method="setMetadataCacheImpl">
@@ -3849,6 +4730,51 @@
               <service class="Doctrine\ORM\Mapping\Driver\DriverChain" public="false">
                 <call method="addDriver">
                   <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\SimplifiedXmlDriver" public="false">
+                      <argument type="collection">
+                        <argument key="D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle\Resources\config\doctrine">FOS\UserBundle\Entity</argument>
+                        <argument key="D:\xampp\htdocs\BestTrip\vendor\sonata-project\user-bundle\Resources\config\doctrine">Sonata\UserBundle\Entity</argument>
+                        <argument key="D:\xampp\htdocs\BestTrip\src\Application\Sonata\UserBundle\Resources\config\doctrine">Application\Sonata\UserBundle\Entity</argument>
+                      </argument>
+                      <call method="setGlobalBasename">
+                        <argument>mapping</argument>
+                      </call>
+                    </service>
+                  </argument>
+                  <argument>FOS\UserBundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\SimplifiedXmlDriver" public="false">
+                      <argument type="collection">
+                        <argument key="D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle\Resources\config\doctrine">FOS\UserBundle\Entity</argument>
+                        <argument key="D:\xampp\htdocs\BestTrip\vendor\sonata-project\user-bundle\Resources\config\doctrine">Sonata\UserBundle\Entity</argument>
+                        <argument key="D:\xampp\htdocs\BestTrip\src\Application\Sonata\UserBundle\Resources\config\doctrine">Application\Sonata\UserBundle\Entity</argument>
+                      </argument>
+                      <call method="setGlobalBasename">
+                        <argument>mapping</argument>
+                      </call>
+                    </service>
+                  </argument>
+                  <argument>Sonata\UserBundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
+                    <service class="Doctrine\ORM\Mapping\Driver\SimplifiedXmlDriver" public="false">
+                      <argument type="collection">
+                        <argument key="D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle\Resources\config\doctrine">FOS\UserBundle\Entity</argument>
+                        <argument key="D:\xampp\htdocs\BestTrip\vendor\sonata-project\user-bundle\Resources\config\doctrine">Sonata\UserBundle\Entity</argument>
+                        <argument key="D:\xampp\htdocs\BestTrip\src\Application\Sonata\UserBundle\Resources\config\doctrine">Application\Sonata\UserBundle\Entity</argument>
+                      </argument>
+                      <call method="setGlobalBasename">
+                        <argument>mapping</argument>
+                      </call>
+                    </service>
+                  </argument>
+                  <argument>Application\Sonata\UserBundle\Entity</argument>
+                </call>
+                <call method="addDriver">
+                  <argument type="service">
                     <service class="Doctrine\ORM\Mapping\Driver\AnnotationDriver" public="false">
                       <argument type="service" id="annotation_reader"/>
                       <argument type="collection">
@@ -3862,7 +4788,7 @@
             </argument>
           </call>
           <call method="setProxyDir">
-            <argument>D:\xampp\htdocs\BestTrip\app\cache\dev/doctrine/orm/Proxies</argument>
+            <argument>D:/xampp/htdocs/BestTrip/app/cache/dev/doctrine/orm/Proxies</argument>
           </call>
           <call method="setProxyNamespace">
             <argument>Proxies</argument>
@@ -4107,12 +5033,16 @@
       <call method="add">
         <argument>sonata.block.service.text</argument>
         <argument>sonata.block.service.text</argument>
-        <argument type="collection"/>
+        <argument type="collection">
+          <argument>cms</argument>
+        </argument>
       </call>
       <call method="add">
         <argument>sonata.block.service.rss</argument>
         <argument>sonata.block.service.rss</argument>
-        <argument type="collection"/>
+        <argument type="collection">
+          <argument>cms</argument>
+        </argument>
       </call>
       <call method="add">
         <argument>sonata.block.service.menu</argument>
@@ -4122,6 +5052,16 @@
       <call method="add">
         <argument>sonata.block.service.template</argument>
         <argument>sonata.block.service.template</argument>
+        <argument type="collection"/>
+      </call>
+      <call method="add">
+        <argument>sonata.user.block.menu</argument>
+        <argument>sonata.user.block.menu</argument>
+        <argument type="collection"/>
+      </call>
+      <call method="add">
+        <argument>sonata.user.block.account</argument>
+        <argument>sonata.user.block.account</argument>
         <argument type="collection"/>
       </call>
       <call method="add">
@@ -4143,6 +5083,9 @@
       <argument type="collection">
         <argument key="by_type" type="collection">
           <argument key="sonata.admin.block.admin_list">sonata.cache.noop</argument>
+          <argument key="sonata.block.service.text">sonata.cache.noop</argument>
+          <argument key="sonata.block.service.action">sonata.cache.noop</argument>
+          <argument key="sonata.block.service.rss">sonata.cache.noop</argument>
         </argument>
       </argument>
       <argument type="service" id="logger" on-invalid="ignore"/>
@@ -4159,6 +5102,9 @@
       <argument type="collection">
         <argument key="by_type" type="collection">
           <argument key="sonata.admin.block.admin_list">sonata.cache.noop</argument>
+          <argument key="sonata.block.service.text">sonata.cache.noop</argument>
+          <argument key="sonata.block.service.action">sonata.cache.noop</argument>
+          <argument key="sonata.block.service.rss">sonata.cache.noop</argument>
         </argument>
       </argument>
       <argument type="service" id="sonata.block.renderer.default"/>
@@ -4177,6 +5123,9 @@
       <tag name="sonata.block.loader"/>
       <argument type="collection">
         <argument>sonata.admin.block.admin_list</argument>
+        <argument>sonata.block.service.text</argument>
+        <argument>sonata.block.service.action</argument>
+        <argument>sonata.block.service.rss</argument>
       </argument>
     </service>
     <service id="sonata.block.twig.global" class="Sonata\BlockBundle\Twig\GlobalVariables">
@@ -4230,6 +5179,401 @@
       <argument>true</argument>
     </service>
     <service id="sonata.block.exception.renderer.throw" class="Sonata\BlockBundle\Exception\Renderer\MonkeyThrowRenderer"/>
+    <service id="fos_user.entity_manager" class="Doctrine\ORM\EntityManager" factory-method="getManager" factory-service="doctrine" public="false">
+      <argument>null</argument>
+    </service>
+    <service id="fos_user.security.interactive_login_listener" class="FOS\UserBundle\Security\InteractiveLoginListener">
+      <tag name="kernel.event_listener" event="security.interactive_login" method="onSecurityInteractiveLogin"/>
+      <argument type="service" id="fos_user.user_manager"/>
+    </service>
+    <service id="fos_user.security.login_manager" class="FOS\UserBundle\Security\LoginManager">
+      <argument type="service" id="security.context"/>
+      <argument type="service" id="security.user_checker"/>
+      <argument type="service" id="security.authentication.session_strategy"/>
+      <argument type="service" id="service_container"/>
+    </service>
+    <service id="fos_user.util.user_manipulator" class="FOS\UserBundle\Util\UserManipulator">
+      <argument type="service" id="fos_user.user_manager"/>
+    </service>
+    <service id="fos_user.username_form_type" class="FOS\UserBundle\Form\Type\UsernameFormType">
+      <tag name="form.type" alias="fos_user_username"/>
+      <argument type="service">
+        <service class="FOS\UserBundle\Form\DataTransformer\UserToUsernameTransformer" public="false">
+          <argument type="service" id="fos_user.user_manager"/>
+        </service>
+      </argument>
+    </service>
+    <service id="fos_user.profile.form" class="Symfony\Component\Form\Form" factory-method="createNamed" factory-service="form.factory">
+      <argument>fos_user_profile_form</argument>
+      <argument>fos_user_profile</argument>
+      <argument>null</argument>
+      <argument type="collection">
+        <argument key="validation_groups" type="collection">
+          <argument>Profile</argument>
+          <argument>Default</argument>
+        </argument>
+      </argument>
+    </service>
+    <service id="fos_user.profile.form.type" class="FOS\UserBundle\Form\Type\ProfileFormType">
+      <tag name="form.type" alias="fos_user_profile"/>
+      <argument>Application\Sonata\UserBundle\Entity\User</argument>
+    </service>
+    <service id="fos_user.registration.form" class="Symfony\Component\Form\Form" factory-method="createNamed" factory-service="form.factory">
+      <argument>fos_user_registration_form</argument>
+      <argument>fos_user_registration</argument>
+      <argument>null</argument>
+      <argument type="collection">
+        <argument key="validation_groups" type="collection">
+          <argument>Registration</argument>
+          <argument>Default</argument>
+        </argument>
+      </argument>
+    </service>
+    <service id="fos_user.registration.form.type" class="FOS\UserBundle\Form\Type\RegistrationFormType">
+      <tag name="form.type" alias="fos_user_registration"/>
+      <argument>Application\Sonata\UserBundle\Entity\User</argument>
+    </service>
+    <service id="fos_user.change_password.form" class="Symfony\Component\Form\Form" factory-method="createNamed" factory-service="form.factory">
+      <argument>fos_user_change_password_form</argument>
+      <argument>fos_user_change_password</argument>
+      <argument>null</argument>
+      <argument type="collection">
+        <argument key="validation_groups" type="collection">
+          <argument>ChangePassword</argument>
+          <argument>Default</argument>
+        </argument>
+      </argument>
+    </service>
+    <service id="fos_user.change_password.form.type" class="FOS\UserBundle\Form\Type\ChangePasswordFormType">
+      <tag name="form.type" alias="fos_user_change_password"/>
+    </service>
+    <service id="fos_user.change_password.form.handler.default" class="FOS\UserBundle\Form\Handler\ChangePasswordFormHandler" scope="request">
+      <argument type="service" id="fos_user.change_password.form"/>
+      <argument type="service" id="request"/>
+      <argument type="service" id="fos_user.user_manager"/>
+    </service>
+    <service id="fos_user.resetting.form" class="Symfony\Component\Form\Form" factory-method="createNamed" factory-service="form.factory">
+      <argument>fos_user_resetting_form</argument>
+      <argument>fos_user_resetting</argument>
+      <argument>null</argument>
+      <argument type="collection">
+        <argument key="validation_groups" type="collection">
+          <argument>ResetPassword</argument>
+          <argument>Default</argument>
+        </argument>
+      </argument>
+    </service>
+    <service id="fos_user.resetting.form.type" class="FOS\UserBundle\Form\Type\ResettingFormType">
+      <tag name="form.type" alias="fos_user_resetting"/>
+    </service>
+    <service id="fos_user.group.form" class="Symfony\Component\Form\Form" factory-method="createNamed" factory-service="form.factory">
+      <argument>fos_user_group_form</argument>
+      <argument>fos_user_group</argument>
+      <argument>null</argument>
+      <argument type="collection">
+        <argument key="validation_groups" type="collection">
+          <argument>Registration</argument>
+          <argument>Default</argument>
+        </argument>
+      </argument>
+    </service>
+    <service id="fos_user.group.form.type" class="FOS\UserBundle\Form\Type\GroupFormType">
+      <tag name="form.type" alias="fos_user_group"/>
+      <argument>Application\Sonata\UserBundle\Entity\Group</argument>
+    </service>
+    <service id="sonata.user.editable_role_builder" class="Sonata\UserBundle\Security\EditableRolesBuilder">
+      <argument type="service" id="security.context"/>
+      <argument type="service" id="sonata.admin.pool"/>
+      <argument type="collection">
+        <argument key="ROLE_ADMIN" type="collection">
+          <argument>ROLE_USER</argument>
+          <argument>ROLE_SONATA_ADMIN</argument>
+        </argument>
+        <argument key="ROLE_SUPER_ADMIN" type="collection">
+          <argument>ROLE_ADMIN</argument>
+          <argument>ROLE_ALLOWED_TO_SWITCH</argument>
+        </argument>
+        <argument key="SONATA" type="collection">
+          <argument>ROLE_SONATA_PAGE_ADMIN_PAGE_EDIT</argument>
+        </argument>
+      </argument>
+    </service>
+    <service id="sonata.user.form.type.security_roles" class="Sonata\UserBundle\Form\Type\SecurityRolesType">
+      <tag name="form.type" alias="sonata_security_roles"/>
+      <argument type="service" id="sonata.user.editable_role_builder"/>
+    </service>
+    <service id="sonata.user.admin.user" class="Sonata\UserBundle\Admin\Entity\UserAdmin" scope="prototype">
+      <tag name="sonata.admin" manager_type="orm" group="%sonata.user.admin.groupname%" label="users" label_catalogue="SonataUserBundle" label_translator_strategy="sonata.admin.label.strategy.underscore"/>
+      <argument>sonata.user.admin.user</argument>
+      <argument>Application\Sonata\UserBundle\Entity\User</argument>
+      <argument>SonataAdminBundle:CRUD</argument>
+      <call method="setUserManager">
+        <argument type="service" id="fos_user.user_manager"/>
+      </call>
+      <call method="setTranslationDomain">
+        <argument>SonataUserBundle</argument>
+      </call>
+      <call method="setFormTheme">
+        <argument type="collection">
+          <argument>SonataDoctrineORMAdminBundle:Form:form_admin_fields.html.twig</argument>
+        </argument>
+      </call>
+      <call method="setFilterTheme">
+        <argument type="collection">
+          <argument>SonataDoctrineORMAdminBundle:Form:filter_admin_fields.html.twig</argument>
+        </argument>
+      </call>
+      <call method="setLabelTranslatorStrategy">
+        <argument type="service" id="sonata.admin.label.strategy.underscore"/>
+      </call>
+      <call method="setManagerType">
+        <argument>orm</argument>
+      </call>
+      <call method="setModelManager">
+        <argument type="service" id="sonata.admin.manager.orm"/>
+      </call>
+      <call method="setFormContractor">
+        <argument type="service" id="sonata.admin.builder.orm_form"/>
+      </call>
+      <call method="setShowBuilder">
+        <argument type="service" id="sonata.admin.builder.orm_show"/>
+      </call>
+      <call method="setListBuilder">
+        <argument type="service" id="sonata.admin.builder.orm_list"/>
+      </call>
+      <call method="setDatagridBuilder">
+        <argument type="service" id="sonata.admin.builder.orm_datagrid"/>
+      </call>
+      <call method="setTranslator">
+        <argument type="service" id="translator.default"/>
+      </call>
+      <call method="setConfigurationPool">
+        <argument type="service" id="sonata.admin.pool"/>
+      </call>
+      <call method="setRouteGenerator">
+        <argument type="service" id="sonata.admin.route.default_generator"/>
+      </call>
+      <call method="setValidator">
+        <argument type="service" id="validator"/>
+      </call>
+      <call method="setSecurityHandler">
+        <argument type="service" id="sonata.admin.security.handler"/>
+      </call>
+      <call method="setMenuFactory">
+        <argument type="service" id="knp_menu.factory"/>
+      </call>
+      <call method="setRouteBuilder">
+        <argument type="service" id="sonata.admin.route.path_info"/>
+      </call>
+      <call method="setLabel">
+        <argument>users</argument>
+      </call>
+      <call method="setPersistFilters">
+        <argument>false</argument>
+      </call>
+      <call method="setTemplates">
+        <argument type="collection">
+          <argument key="user_block">SonataUserBundle:Admin/Core:user_block.html.twig</argument>
+          <argument key="add_block">SonataAdminBundle:Core:add_block.html.twig</argument>
+          <argument key="layout">SonataAdminBundle::standard_layout.html.twig</argument>
+          <argument key="ajax">SonataAdminBundle::ajax_layout.html.twig</argument>
+          <argument key="dashboard">SonataAdminBundle:Core:dashboard.html.twig</argument>
+          <argument key="list">SonataAdminBundle:CRUD:list.html.twig</argument>
+          <argument key="filter">SonataAdminBundle:Form:filter_admin_fields.html.twig</argument>
+          <argument key="show">SonataAdminBundle:CRUD:show.html.twig</argument>
+          <argument key="show_compare">SonataAdminBundle:CRUD:show_compare.html.twig</argument>
+          <argument key="edit">SonataAdminBundle:CRUD:edit.html.twig</argument>
+          <argument key="history">SonataAdminBundle:CRUD:history.html.twig</argument>
+          <argument key="history_revision_timestamp">SonataAdminBundle:CRUD:history_revision_timestamp.html.twig</argument>
+          <argument key="acl">SonataAdminBundle:CRUD:acl.html.twig</argument>
+          <argument key="action">SonataAdminBundle:CRUD:action.html.twig</argument>
+          <argument key="short_object_description">SonataAdminBundle:Helper:short-object-description.html.twig</argument>
+          <argument key="preview">SonataAdminBundle:CRUD:preview.html.twig</argument>
+          <argument key="list_block">SonataAdminBundle:Block:block_admin_list.html.twig</argument>
+          <argument key="delete">SonataAdminBundle:CRUD:delete.html.twig</argument>
+          <argument key="batch">SonataAdminBundle:CRUD:list__batch.html.twig</argument>
+          <argument key="select">SonataAdminBundle:CRUD:list__select.html.twig</argument>
+          <argument key="batch_confirmation">SonataAdminBundle:CRUD:batch_confirmation.html.twig</argument>
+          <argument key="inner_list_row">SonataAdminBundle:CRUD:list_inner_row.html.twig</argument>
+          <argument key="base_list_field">SonataAdminBundle:CRUD:base_list_field.html.twig</argument>
+          <argument key="pager_links">SonataAdminBundle:Pager:links.html.twig</argument>
+          <argument key="pager_results">SonataAdminBundle:Pager:results.html.twig</argument>
+          <argument key="tab_menu_template">SonataAdminBundle:Core:tab_menu_template.html.twig</argument>
+          <argument key="search">SonataAdminBundle:Core:search.html.twig</argument>
+          <argument key="search_result_block">SonataAdminBundle:Block:block_search_result.html.twig</argument>
+        </argument>
+      </call>
+      <call method="setSecurityInformation">
+        <argument type="collection"/>
+      </call>
+      <call method="initialize"/>
+      <call method="addExtension">
+        <argument type="service" id="sonata.admin.event.extension"/>
+      </call>
+    </service>
+    <service id="sonata.user.admin.group" class="Sonata\UserBundle\Admin\Entity\GroupAdmin" scope="prototype">
+      <tag name="sonata.admin" manager_type="orm" group="%sonata.user.admin.groupname%" label="groups" label_catalogue="SonataUserBundle" label_translator_strategy="sonata.admin.label.strategy.underscore"/>
+      <argument>sonata.user.admin.group</argument>
+      <argument>Application\Sonata\UserBundle\Entity\Group</argument>
+      <argument>SonataAdminBundle:CRUD</argument>
+      <call method="setTranslationDomain">
+        <argument>SonataUserBundle</argument>
+      </call>
+      <call method="setFormTheme">
+        <argument type="collection">
+          <argument>SonataDoctrineORMAdminBundle:Form:form_admin_fields.html.twig</argument>
+        </argument>
+      </call>
+      <call method="setFilterTheme">
+        <argument type="collection">
+          <argument>SonataDoctrineORMAdminBundle:Form:filter_admin_fields.html.twig</argument>
+        </argument>
+      </call>
+      <call method="setLabelTranslatorStrategy">
+        <argument type="service" id="sonata.admin.label.strategy.underscore"/>
+      </call>
+      <call method="setManagerType">
+        <argument>orm</argument>
+      </call>
+      <call method="setModelManager">
+        <argument type="service" id="sonata.admin.manager.orm"/>
+      </call>
+      <call method="setFormContractor">
+        <argument type="service" id="sonata.admin.builder.orm_form"/>
+      </call>
+      <call method="setShowBuilder">
+        <argument type="service" id="sonata.admin.builder.orm_show"/>
+      </call>
+      <call method="setListBuilder">
+        <argument type="service" id="sonata.admin.builder.orm_list"/>
+      </call>
+      <call method="setDatagridBuilder">
+        <argument type="service" id="sonata.admin.builder.orm_datagrid"/>
+      </call>
+      <call method="setTranslator">
+        <argument type="service" id="translator.default"/>
+      </call>
+      <call method="setConfigurationPool">
+        <argument type="service" id="sonata.admin.pool"/>
+      </call>
+      <call method="setRouteGenerator">
+        <argument type="service" id="sonata.admin.route.default_generator"/>
+      </call>
+      <call method="setValidator">
+        <argument type="service" id="validator"/>
+      </call>
+      <call method="setSecurityHandler">
+        <argument type="service" id="sonata.admin.security.handler"/>
+      </call>
+      <call method="setMenuFactory">
+        <argument type="service" id="knp_menu.factory"/>
+      </call>
+      <call method="setRouteBuilder">
+        <argument type="service" id="sonata.admin.route.path_info"/>
+      </call>
+      <call method="setLabel">
+        <argument>groups</argument>
+      </call>
+      <call method="setPersistFilters">
+        <argument>false</argument>
+      </call>
+      <call method="setTemplates">
+        <argument type="collection">
+          <argument key="user_block">SonataUserBundle:Admin/Core:user_block.html.twig</argument>
+          <argument key="add_block">SonataAdminBundle:Core:add_block.html.twig</argument>
+          <argument key="layout">SonataAdminBundle::standard_layout.html.twig</argument>
+          <argument key="ajax">SonataAdminBundle::ajax_layout.html.twig</argument>
+          <argument key="dashboard">SonataAdminBundle:Core:dashboard.html.twig</argument>
+          <argument key="list">SonataAdminBundle:CRUD:list.html.twig</argument>
+          <argument key="filter">SonataAdminBundle:Form:filter_admin_fields.html.twig</argument>
+          <argument key="show">SonataAdminBundle:CRUD:show.html.twig</argument>
+          <argument key="show_compare">SonataAdminBundle:CRUD:show_compare.html.twig</argument>
+          <argument key="edit">SonataAdminBundle:CRUD:edit.html.twig</argument>
+          <argument key="history">SonataAdminBundle:CRUD:history.html.twig</argument>
+          <argument key="history_revision_timestamp">SonataAdminBundle:CRUD:history_revision_timestamp.html.twig</argument>
+          <argument key="acl">SonataAdminBundle:CRUD:acl.html.twig</argument>
+          <argument key="action">SonataAdminBundle:CRUD:action.html.twig</argument>
+          <argument key="short_object_description">SonataAdminBundle:Helper:short-object-description.html.twig</argument>
+          <argument key="preview">SonataAdminBundle:CRUD:preview.html.twig</argument>
+          <argument key="list_block">SonataAdminBundle:Block:block_admin_list.html.twig</argument>
+          <argument key="delete">SonataAdminBundle:CRUD:delete.html.twig</argument>
+          <argument key="batch">SonataAdminBundle:CRUD:list__batch.html.twig</argument>
+          <argument key="select">SonataAdminBundle:CRUD:list__select.html.twig</argument>
+          <argument key="batch_confirmation">SonataAdminBundle:CRUD:batch_confirmation.html.twig</argument>
+          <argument key="inner_list_row">SonataAdminBundle:CRUD:list_inner_row.html.twig</argument>
+          <argument key="base_list_field">SonataAdminBundle:CRUD:base_list_field.html.twig</argument>
+          <argument key="pager_links">SonataAdminBundle:Pager:links.html.twig</argument>
+          <argument key="pager_results">SonataAdminBundle:Pager:results.html.twig</argument>
+          <argument key="tab_menu_template">SonataAdminBundle:Core:tab_menu_template.html.twig</argument>
+          <argument key="search">SonataAdminBundle:Core:search.html.twig</argument>
+          <argument key="search_result_block">SonataAdminBundle:Block:block_search_result.html.twig</argument>
+        </argument>
+      </call>
+      <call method="setSecurityInformation">
+        <argument type="collection"/>
+      </call>
+      <call method="initialize"/>
+      <call method="addExtension">
+        <argument type="service" id="sonata.admin.event.extension"/>
+      </call>
+    </service>
+    <service id="sonata.user.block.menu" class="Sonata\UserBundle\Block\ProfileMenuBlockService">
+      <tag name="sonata.block"/>
+      <argument>sonata.user.block.menu</argument>
+      <argument type="service" id="templating"/>
+      <argument type="service" id="knp_menu.menu_provider"/>
+      <argument type="service" id="sonata.user.profile.menu_builder"/>
+    </service>
+    <service id="sonata.user.block.account" class="Sonata\UserBundle\Block\AccountBlockService">
+      <tag name="sonata.block"/>
+      <argument>sonata.user.block.account</argument>
+      <argument type="service" id="templating"/>
+      <argument type="service" id="security.context"/>
+    </service>
+    <service id="sonata.user.profile.menu_builder" class="Sonata\UserBundle\Menu\ProfileMenuBuilder">
+      <argument type="service" id="knp_menu.factory"/>
+      <argument type="service" id="translator.default"/>
+      <argument type="collection">
+        <argument type="collection">
+          <argument key="route">sonata_user_profile_edit</argument>
+          <argument key="label">link_edit_profile</argument>
+          <argument key="domain">SonataUserBundle</argument>
+          <argument key="route_parameters" type="collection"/>
+        </argument>
+        <argument type="collection">
+          <argument key="route">sonata_user_profile_edit_authentication</argument>
+          <argument key="label">link_edit_authentication</argument>
+          <argument key="domain">SonataUserBundle</argument>
+          <argument key="route_parameters" type="collection"/>
+        </argument>
+      </argument>
+      <argument type="service" id="event_dispatcher"/>
+    </service>
+    <service id="sonata.user.profile.form" class="Symfony\Component\Form\Form" factory-method="createNamed" factory-service="form.factory">
+      <argument>sonata_user_profile_form</argument>
+      <argument>sonata_user_profile</argument>
+      <argument>null</argument>
+      <argument type="collection">
+        <argument key="validation_groups" type="collection">
+          <argument>Profile</argument>
+          <argument>Default</argument>
+        </argument>
+        <argument key="translation_domain">SonataUserBundle</argument>
+      </argument>
+    </service>
+    <service id="sonata.user.profile.form.type" class="Sonata\UserBundle\Form\Type\ProfileType">
+      <tag name="form.type" alias="sonata_user_profile"/>
+      <argument>Application\Sonata\UserBundle\Entity\User</argument>
+    </service>
+    <service id="sonata.user.form.gender_list" class="Sonata\CoreBundle\Form\Type\StatusType">
+      <tag name="form.type" alias="sonata_user_gender"/>
+      <argument>Application\Sonata\UserBundle\Entity\User</argument>
+      <argument>getGenderList</argument>
+      <argument>sonata_user_gender</argument>
+    </service>
+    <service id="sonata.user.twig.global" class="Sonata\UserBundle\Twig\GlobalVariables">
+      <argument type="service" id="service_container"/>
+    </service>
     <service id="knp_menu.factory" class="Knp\Menu\MenuFactory">
       <call method="addExtension">
         <argument type="service">
@@ -4446,7 +5790,7 @@
       <argument type="collection"/>
       <call method="setTemplates">
         <argument type="collection">
-          <argument key="user_block">SonataAdminBundle:Core:user_block.html.twig</argument>
+          <argument key="user_block">SonataUserBundle:Admin/Core:user_block.html.twig</argument>
           <argument key="add_block">SonataAdminBundle:Core:add_block.html.twig</argument>
           <argument key="layout">SonataAdminBundle::standard_layout.html.twig</argument>
           <argument key="ajax">SonataAdminBundle::ajax_layout.html.twig</argument>
@@ -4480,6 +5824,8 @@
         <argument type="collection">
           <argument>sonata.admin.experience</argument>
           <argument>sonata.admin.user</argument>
+          <argument>sonata.user.admin.user</argument>
+          <argument>sonata.user.admin.group</argument>
         </argument>
       </call>
       <call method="setAdminGroups">
@@ -4494,6 +5840,16 @@
               <argument>sonata.admin.user</argument>
             </argument>
           </argument>
+          <argument key="sonata_user" type="collection">
+            <argument key="label">sonata_user</argument>
+            <argument key="label_catalogue">SonataUserBundle</argument>
+            <argument key="icon">&lt;i class="fa fa-folder"&gt;&lt;/i&gt;</argument>
+            <argument key="roles" type="collection"/>
+            <argument key="items" type="collection">
+              <argument>sonata.user.admin.user</argument>
+              <argument>sonata.user.admin.group</argument>
+            </argument>
+          </argument>
         </argument>
       </call>
       <call method="setAdminClasses">
@@ -4504,6 +5860,12 @@
           <argument key="Admin\AdminBundle\Entity\User" type="collection">
             <argument>sonata.admin.user</argument>
           </argument>
+          <argument key="Application\Sonata\UserBundle\Entity\User" type="collection">
+            <argument>sonata.user.admin.user</argument>
+          </argument>
+          <argument key="Application\Sonata\UserBundle\Entity\Group" type="collection">
+            <argument>sonata.user.admin.group</argument>
+          </argument>
         </argument>
       </call>
     </service>
@@ -4513,6 +5875,8 @@
       <argument type="collection">
         <argument>sonata.admin.experience</argument>
         <argument>sonata.admin.user</argument>
+        <argument>sonata.user.admin.user</argument>
+        <argument>sonata.user.admin.group</argument>
       </argument>
       <argument type="service" id="service_container"/>
     </service>
@@ -4637,7 +6001,7 @@
       <argument type="service" id="sonata.admin.route.cache"/>
     </service>
     <service id="sonata.admin.route.cache" class="Sonata\AdminBundle\Route\RoutesCache">
-      <argument>D:\xampp\htdocs\BestTrip\app\cache\dev/sonata/admin</argument>
+      <argument>D:/xampp/htdocs/BestTrip/app/cache/dev/sonata/admin</argument>
       <argument>true</argument>
     </service>
     <service id="sonata.admin.route.cache_warmup" class="Sonata\AdminBundle\Route\RoutesCacheWarmUp">
@@ -4664,6 +6028,44 @@
     <service id="sonata.admin.object.manipulator.acl.admin" class="Sonata\AdminBundle\Util\AdminObjectAclManipulator">
       <argument type="service" id="form.factory"/>
       <argument>Sonata\AdminBundle\Security\Acl\Permission\MaskBuilder</argument>
+    </service>
+    <service id="sonata.easy_extends.generator.bundle" class="Sonata\EasyExtendsBundle\Generator\BundleGenerator"/>
+    <service id="sonata.easy_extends.generator.orm" class="Sonata\EasyExtendsBundle\Generator\OrmGenerator"/>
+    <service id="sonata.easy_extends.generator.odm" class="Sonata\EasyExtendsBundle\Generator\OdmGenerator"/>
+    <service id="sonata.easy_extends.generator.phpcr" class="Sonata\EasyExtendsBundle\Generator\PHPCRGenerator"/>
+    <service id="sonata.easy_extends.generator.serializer" class="Sonata\EasyExtendsBundle\Generator\SerializerGenerator"/>
+    <service id="sonata.easy_extends.doctrine.mapper" class="Sonata\EasyExtendsBundle\Mapper\DoctrineORMMapper">
+      <tag name="doctrine.event_subscriber"/>
+      <argument type="service" id="doctrine"/>
+      <argument type="collection"/>
+      <call method="addAssociation">
+        <argument>Application\Sonata\UserBundle\Entity\User</argument>
+        <argument>mapManyToMany</argument>
+        <argument type="collection">
+          <argument type="collection">
+            <argument key="fieldName">groups</argument>
+            <argument key="targetEntity">Application\Sonata\UserBundle\Entity\Group</argument>
+            <argument key="cascade" type="collection"/>
+            <argument key="joinTable" type="collection">
+              <argument key="name">fos_user_user_group</argument>
+              <argument key="joinColumns" type="collection">
+                <argument type="collection">
+                  <argument key="name">user_id</argument>
+                  <argument key="referencedColumnName">id</argument>
+                  <argument key="onDelete">CASCADE</argument>
+                </argument>
+              </argument>
+              <argument key="inverseJoinColumns" type="collection">
+                <argument type="collection">
+                  <argument key="name">group_id</argument>
+                  <argument key="referencedColumnName">id</argument>
+                  <argument key="onDelete">CASCADE</argument>
+                </argument>
+              </argument>
+            </argument>
+          </argument>
+        </argument>
+      </call>
     </service>
     <service id="twig.extension.acme.demo" class="Acme\DemoBundle\Twig\Extension\DemoExtension" public="false">
       <tag name="twig.extension"/>
@@ -4889,10 +6291,10 @@
       <argument>true</argument>
     </service>
     <service id="session.storage.filesystem" class="Symfony\Component\HttpFoundation\Session\Storage\MockFileSessionStorage">
-      <argument>D:\xampp\htdocs\BestTrip\app\cache\dev/sessions</argument>
+      <argument>D:/xampp/htdocs/BestTrip/app/cache/dev/sessions</argument>
     </service>
     <service id="session.handler" class="Symfony\Component\HttpFoundation\Session\Storage\Handler\NativeFileSessionHandler">
-      <argument>D:\xampp\htdocs\BestTrip\app\cache\dev/sessions</argument>
+      <argument>D:/xampp/htdocs/BestTrip/app/cache/dev/sessions</argument>
     </service>
     <service id="templating.loader" class="Symfony\Bundle\FrameworkBundle\Templating\Loader\FilesystemLoader">
       <argument type="service" id="templating.locator"/>
@@ -4933,9 +6335,9 @@
     <service id="router" class="Symfony\Bundle\FrameworkBundle\Routing\Router">
       <tag name="monolog.logger" channel="router"/>
       <argument type="service" id="service_container"/>
-      <argument>D:\xampp\htdocs\BestTrip\app\cache\dev/assetic/routing.yml</argument>
+      <argument>D:/xampp/htdocs/BestTrip/app/cache/dev/assetic/routing.yml</argument>
       <argument type="collection">
-        <argument key="cache_dir">D:\xampp\htdocs\BestTrip\app\cache\dev</argument>
+        <argument key="cache_dir">D:/xampp/htdocs/BestTrip/app/cache/dev</argument>
         <argument key="debug">true</argument>
         <argument key="generator_class">Symfony\Component\Routing\Generator\UrlGenerator</argument>
         <argument key="generator_base_class">Symfony\Component\Routing\Generator\UrlGenerator</argument>
@@ -4954,18 +6356,34 @@
       <argument type="service">
         <service class="Doctrine\Common\Annotations\AnnotationReader" public="false"/>
       </argument>
-      <argument>D:\xampp\htdocs\BestTrip\app\cache\dev/annotations</argument>
+      <argument>D:/xampp/htdocs/BestTrip/app/cache/dev/annotations</argument>
       <argument>true</argument>
     </service>
     <service id="security.encoder_factory" class="Symfony\Component\Security\Core\Encoder\EncoderFactory">
       <argument type="collection">
-        <argument key="Symfony\Component\Security\Core\User\User" type="collection">
-          <argument key="class">%security.encoder.plain.class%</argument>
+        <argument key="FOS\UserBundle\Model\UserInterface" type="collection">
+          <argument key="class">%security.encoder.digest.class%</argument>
           <argument key="arguments" type="collection">
-            <argument>false</argument>
+            <argument>sha512</argument>
+            <argument>true</argument>
+            <argument>5000</argument>
           </argument>
         </argument>
       </argument>
+    </service>
+    <service id="security.acl.provider" class="Symfony\Component\Security\Acl\Dbal\MutableAclProvider">
+      <argument type="service" id="doctrine.dbal.default_connection"/>
+      <argument type="service">
+        <service class="Symfony\Component\Security\Acl\Domain\PermissionGrantingStrategy" public="false"/>
+      </argument>
+      <argument type="collection">
+        <argument key="class_table_name">acl_classes</argument>
+        <argument key="entry_table_name">acl_entries</argument>
+        <argument key="oid_table_name">acl_object_identities</argument>
+        <argument key="oid_ancestors_table_name">acl_object_identity_ancestors</argument>
+        <argument key="sid_table_name">acl_security_identities</argument>
+      </argument>
+      <argument>null</argument>
     </service>
     <service id="twig.loader" class="Symfony\Bundle\TwigBundle\Loader\FilesystemLoader">
       <tag name="twig.loader"/>
@@ -5000,6 +6418,14 @@
         <argument>SonataBlock</argument>
       </call>
       <call method="addPath">
+        <argument>D:\xampp\htdocs\BestTrip\vendor\friendsofsymfony\user-bundle\FOS\UserBundle/Resources/views</argument>
+        <argument>FOSUser</argument>
+      </call>
+      <call method="addPath">
+        <argument>D:\xampp\htdocs\BestTrip\vendor\sonata-project\user-bundle/Resources/views</argument>
+        <argument>SonataUser</argument>
+      </call>
+      <call method="addPath">
         <argument>D:\xampp\htdocs\BestTrip\vendor\sonata-project\doctrine-orm-admin-bundle/Resources/views</argument>
         <argument>SonataDoctrineORMAdmin</argument>
       </call>
@@ -5010,6 +6436,10 @@
       <call method="addPath">
         <argument>D:\xampp\htdocs\BestTrip\src\Admin\AdminBundle/Resources/views</argument>
         <argument>AdminAdmin</argument>
+      </call>
+      <call method="addPath">
+        <argument>D:\xampp\htdocs\BestTrip\src\Application\Sonata\UserBundle/Resources/views</argument>
+        <argument>ApplicationSonataUser</argument>
       </call>
       <call method="addPath">
         <argument>D:\xampp\htdocs\BestTrip\src\Acme\DemoBundle/Resources/views</argument>
@@ -5107,6 +6537,65 @@
         <argument>null</argument>
       </call>
     </service>
+    <service id="fos_user.mailer" class="FOS\UserBundle\Mailer\Mailer">
+      <argument type="service" id="swiftmailer.mailer.default"/>
+      <argument type="service" id="router"/>
+      <argument type="service" id="templating"/>
+      <argument type="collection">
+        <argument key="confirmation.template">FOSUserBundle:Registration:email.txt.twig</argument>
+        <argument key="resetting.template">FOSUserBundle:Resetting:email.txt.twig</argument>
+        <argument key="from_email" type="collection">
+          <argument key="confirmation" type="collection">
+            <argument key="webmaster@example.com">webmaster</argument>
+          </argument>
+          <argument key="resetting" type="collection">
+            <argument key="webmaster@example.com">webmaster</argument>
+          </argument>
+        </argument>
+      </argument>
+    </service>
+    <service id="fos_user.util.email_canonicalizer" class="FOS\UserBundle\Util\Canonicalizer"/>
+    <service id="fos_user.util.token_generator" class="FOS\UserBundle\Util\TokenGenerator">
+      <argument type="service" id="logger" on-invalid="ignore"/>
+    </service>
+    <service id="fos_user.user_manager" class="FOS\UserBundle\Doctrine\UserManager">
+      <argument type="service" id="security.encoder_factory"/>
+      <argument type="service" id="fos_user.util.email_canonicalizer"/>
+      <argument type="service" id="fos_user.util.email_canonicalizer"/>
+      <argument type="service" id="fos_user.entity_manager"/>
+      <argument>Application\Sonata\UserBundle\Entity\User</argument>
+    </service>
+    <service id="fos_user.profile.form.handler" class="FOS\UserBundle\Form\Handler\ProfileFormHandler" scope="request">
+      <argument type="service" id="fos_user.profile.form"/>
+      <argument type="service" id="request"/>
+      <argument type="service" id="fos_user.user_manager"/>
+    </service>
+    <service id="fos_user.registration.form.handler" class="FOS\UserBundle\Form\Handler\RegistrationFormHandler" scope="request">
+      <argument type="service" id="fos_user.registration.form"/>
+      <argument type="service" id="request"/>
+      <argument type="service" id="fos_user.user_manager"/>
+      <argument type="service" id="fos_user.mailer"/>
+      <argument type="service" id="fos_user.util.token_generator"/>
+    </service>
+    <service id="fos_user.resetting.form.handler" class="FOS\UserBundle\Form\Handler\ResettingFormHandler" scope="request">
+      <argument type="service" id="fos_user.resetting.form"/>
+      <argument type="service" id="request"/>
+      <argument type="service" id="fos_user.user_manager"/>
+    </service>
+    <service id="fos_user.group_manager" class="FOS\UserBundle\Doctrine\GroupManager">
+      <argument type="service" id="fos_user.entity_manager"/>
+      <argument>Application\Sonata\UserBundle\Entity\Group</argument>
+    </service>
+    <service id="fos_user.group.form.handler" class="FOS\UserBundle\Form\Handler\GroupFormHandler" scope="request">
+      <argument type="service" id="fos_user.group.form"/>
+      <argument type="service" id="request"/>
+      <argument type="service" id="fos_user.group_manager"/>
+    </service>
+    <service id="sonata.user.profile.form.handler" class="Sonata\UserBundle\Form\Handler\ProfileFormHandler" scope="request">
+      <argument type="service" id="sonata.user.profile.form"/>
+      <argument type="service" id="request"/>
+      <argument type="service" id="fos_user.user_manager"/>
+    </service>
     <service id="sonata.admin.security.handler" class="Sonata\AdminBundle\Security\Handler\NoopSecurityHandler"/>
     <service id="knp_menu.menu_provider" class="Knp\Menu\Provider\ChainProvider">
       <argument type="collection">
@@ -5129,6 +6618,7 @@
     </service>
     <service id="session.storage" alias="session.storage.native"/>
     <service id="translator" alias="translator.default"/>
+    <service id="security.acl.dbal.connection" alias="doctrine.dbal.default_connection"/>
     <service id="debug.templating.engine.twig" alias="templating"/>
     <service id="swiftmailer.spool" alias="swiftmailer.mailer.default.spool"/>
     <service id="swiftmailer.transport.real" alias="swiftmailer.mailer.default.transport.real"/>
@@ -5141,6 +6631,10 @@
     <service id="sonata.block.context_manager" alias="sonata.block.context_manager.default"/>
     <service id="sonata.block.cache.handler" alias="sonata.block.cache.handler.default"/>
     <service id="sonata.block.renderer" alias="sonata.block.renderer.default"/>
+    <service id="fos_user.util.username_canonicalizer" alias="fos_user.util.email_canonicalizer"/>
+    <service id="fos_user.change_password.form.handler" alias="fos_user.change_password.form.handler.default"/>
+    <service id="sonata.user.authentication.form" alias="fos_user.profile.form"/>
+    <service id="sonata.user.authentication.form_handler" alias="fos_user.profile.form.handler"/>
     <service id="sensio.distribution.webconfigurator" alias="sensio_distribution.webconfigurator"/>
   </services>
 </container>
