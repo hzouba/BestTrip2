@@ -1,6 +1,6 @@
 <?php
 
-/* SonataUserBundle:Admin/Field:impersonating.html.twig */
+/* SonataUserBundle:Admin:Field/impersonating.html.twig */
 class __TwigTemplate_45d4ae42b8e821a0bbfa053dbb890edc2ab8a2b68599514fec69643bdb18a9c7 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -8,7 +8,7 @@ class __TwigTemplate_45d4ae42b8e821a0bbfa053dbb890edc2ab8a2b68599514fec69643bdb1
         parent::__construct($env);
 
         // line 12
-        $this->parent = $this->loadTemplate("SonataAdminBundle:CRUD:base_list_field.html.twig", "SonataUserBundle:Admin/Field:impersonating.html.twig", 12);
+        $this->parent = $this->loadTemplate("SonataAdminBundle:CRUD:base_list_field.html.twig", "SonataUserBundle:Admin:Field/impersonating.html.twig", 12);
         $this->blocks = array(
             'field' => array($this, 'block_field'),
         );
@@ -53,7 +53,7 @@ class __TwigTemplate_45d4ae42b8e821a0bbfa053dbb890edc2ab8a2b68599514fec69643bdb1
 
     public function getTemplateName()
     {
-        return "SonataUserBundle:Admin/Field:impersonating.html.twig";
+        return "SonataUserBundle:Admin:Field/impersonating.html.twig";
     }
 
     public function isTraitable()

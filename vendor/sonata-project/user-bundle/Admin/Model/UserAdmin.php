@@ -80,6 +80,7 @@ class UserAdmin extends Admin
         $filterMapper
             ->add('id')
             ->add('username')
+            ->add('enabled')
             ->add('locked')
             ->add('email')
             ->add('groups')

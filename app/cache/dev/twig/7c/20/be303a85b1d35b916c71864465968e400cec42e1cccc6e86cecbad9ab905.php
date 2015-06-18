@@ -1,6 +1,6 @@
 <?php
 
-/* FOSUserBundle::layout.html.twig */
+/* SonataUserBundle::layout.html.twig */
 class __TwigTemplate_7c20be303a85b1d35b916c71864465968e400cec42e1cccc6e86cecbad9ab905 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -34,7 +34,7 @@ class __TwigTemplate_7c20be303a85b1d35b916c71864465968e400cec42e1cccc6e86cecbad9
 
     public function getTemplateName()
     {
-        return "FOSUserBundle::layout.html.twig";
+        return "SonataUserBundle::layout.html.twig";
     }
 
     public function getDebugInfo()

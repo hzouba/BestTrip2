@@ -25,10 +25,10 @@ class AppKernel extends Kernel {
             new Sonata\EasyExtendsBundle\SonataEasyExtendsBundle(),
             new Admin\AdminBundle\AdminAdminBundle(),
             new Application\Sonata\UserBundle\ApplicationSonataUserBundle(),
+            new BT\FrontBundle\BTFrontBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
-            $bundles[] = new Acme\DemoBundle\AcmeDemoBundle();
             $bundles[] = new Symfony\Bundle\WebProfilerBundle\WebProfilerBundle();
             $bundles[] = new Sensio\Bundle\DistributionBundle\SensioDistributionBundle();
             $bundles[] = new Sensio\Bundle\GeneratorBundle\SensioGeneratorBundle();

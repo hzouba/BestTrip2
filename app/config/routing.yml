@@ -1,3 +1,7 @@
+bt_front:
+    resource: "@BTFrontBundle/Resources/config/routing.yml"
+    prefix:   /
+
 admin_admin:
     resource: "@AdminAdminBundle/Resources/config/routing.yml"
     prefix:   /

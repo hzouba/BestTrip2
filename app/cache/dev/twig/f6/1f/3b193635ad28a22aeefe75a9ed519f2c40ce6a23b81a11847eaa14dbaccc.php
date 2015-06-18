@@ -1,6 +1,6 @@
 <?php
 
-/* FOSUserBundle:Profile:show.html.twig */
+/* SonataUserBundle:Profile:show.html.twig */
 class __TwigTemplate_f61f3b193635ad28a22aeefe75a9ed519f2c40ce6a23b81a11847eaa14dbaccc extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -8,7 +8,7 @@ class __TwigTemplate_f61f3b193635ad28a22aeefe75a9ed519f2c40ce6a23b81a11847eaa14d
         parent::__construct($env);
 
         // line 12
-        $this->parent = $this->loadTemplate("SonataUserBundle:Profile:action.html.twig", "FOSUserBundle:Profile:show.html.twig", 12);
+        $this->parent = $this->loadTemplate("SonataUserBundle:Profile:action.html.twig", "SonataUserBundle:Profile:show.html.twig", 12);
         $this->blocks = array(
             'sonata_profile_content' => array($this, 'block_sonata_profile_content'),
         );
@@ -158,7 +158,7 @@ class __TwigTemplate_f61f3b193635ad28a22aeefe75a9ed519f2c40ce6a23b81a11847eaa14d
 
     public function getTemplateName()
     {
-        return "FOSUserBundle:Profile:show.html.twig";
+        return "SonataUserBundle:Profile:show.html.twig";
     }
 
     public function isTraitable()

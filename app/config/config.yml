@@ -104,3 +104,8 @@ fos_user:
     user_class:     Application\Sonata\UserBundle\Entity\User
     group:
         group_class:   Application\Sonata\UserBundle\Entity\Group
+    registration:
+        confirmation:
+            enabled:    false
+
+
