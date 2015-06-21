@@ -7,28 +7,22 @@ class __TwigTemplate_c5d8e87ced26fbb97242652ec7add77b5296b6ab993d250315b33d9168b
     {
         parent::__construct($env);
 
-        // line 1
-        $this->parent = $this->loadTemplate("FOSUserBundle::layout.html.twig", "FOSUserBundle:Registration:register.html.twig", 1);
-        $this->blocks = array(
-            'fos_user_content' => array($this, 'block_fos_user_content'),
-        );
-    }
+        $this->parent = false;
 
-    protected function doGetParent(array $context)
-    {
-        return "FOSUserBundle::layout.html.twig";
+        $this->blocks = array(
+        );
     }
 
     protected function doDisplay(array $context, array $blocks = array())
     {
-        $this->parent->display($context, array_merge($this->blocks, $blocks));
-    }
-
-    // line 3
-    public function block_fos_user_content($context, array $blocks = array())
-    {
-        // line 4
-        $this->loadTemplate("FOSUserBundle:Registration:register_content.html.twig", "FOSUserBundle:Registration:register.html.twig", 4)->display($context);
+        // line 1
+        echo "
+";
+        // line 2
+        $this->loadTemplate("FOSUserBundle:Registration:register_content.html.twig", "FOSUserBundle:Registration:register.html.twig", 2)->display($context);
+        // line 3
+        echo "
+";
     }
 
     public function getTemplateName()
@@ -43,6 +37,6 @@ class __TwigTemplate_c5d8e87ced26fbb97242652ec7add77b5296b6ab993d250315b33d9168b
 
     public function getDebugInfo()
     {
-        return array (  31 => 4,  28 => 3,  11 => 1,);
+        return array (  24 => 3,  22 => 2,  19 => 1,);
     }
 }

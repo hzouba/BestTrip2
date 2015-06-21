@@ -1,12 +1,5 @@
-"use strict";
 
-$('ul.slimmenu').slimmenu({
-    resizeWidth: '992',
-    collapserTitle: 'Main Menu',
-    animSpeed: 250,
-    indentChildren: true,
-    childrenIndenter: ''
-});
+
 
 
 // Countdown
@@ -86,7 +79,7 @@ $('.input-daterange input[name="end"]').datepicker('setDate', '+7d');
 $('input.time-pick').timepicker({
     minuteStep: 15,
     showInpunts: false
-})
+});
 
 $('input.date-pick-years').datepicker({
     startView: 2
@@ -162,23 +155,7 @@ $('div.bg-parallax').each(function() {
 $(document).ready(
     function() {
 
-    $('html').niceScroll({
-        cursorcolor: "#000",
-        cursorborder: "0px solid #fff",
-        railpadding: {
-            top: 0,
-            right: 0,
-            left: 0,
-            bottom: 0
-        },
-        cursorwidth: "10px",
-        cursorborderradius: "0px",
-        cursoropacitymin: 0.2,
-        cursoropacitymax: 0.8,
-        boxzoom: true,
-        horizrailenabled: false,
-        zindex: 9999
-    });
+    
 
 
         // Owl Carousel
