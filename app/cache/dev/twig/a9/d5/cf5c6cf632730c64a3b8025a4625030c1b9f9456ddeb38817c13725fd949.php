@@ -22,7 +22,7 @@ class __TwigTemplate_a9d5cf5c6cf632730c64a3b8025a4625030c1b9f9456ddeb38817c13725
         echo $this->env->getExtension('routing')->getPath("fos_user_registration_register");
         echo "\" ";
         echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'enctype');
-        echo " method=\"POST\" class=\"fos_user_registration_register form-horizontal\">
+        echo " method=\"POST\" class=\"fos_user_registration_register\">
     <div class=\"form-group\" id=\"fos_user_registration_form\">
         <div class=\"form-group form-group-ghost form-group-icon-left\"><i class=\"fa fa-envelope-o input-icon input-icon-show\"></i>
             <label>Email</label>

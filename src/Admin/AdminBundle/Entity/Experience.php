@@ -29,26 +29,14 @@ class Experience
     private $dateAdd;
 
     /**
-     * @var \User
+     * @var \Application\Sonata\UserBundle\Entity\User
      *
-     * @ORM\ManyToOne(targetEntity="User")
+     * @ORM\ManyToOne(targetEntity="\Application\Sonata\UserBundle\Entity\User")
      * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="id_user", referencedColumnName="id_user")
+     *   @ORM\JoinColumn(name="id_user", referencedColumnName="id")
      * })
      */
     private $idUser;
-
-    /**
-     * @var \User
-     *
-     * @ORM\ManyToOne(targetEntity="User")
-     * @ORM\JoinColumns({
-     *   @ORM\JoinColumn(name="USE_id_user", referencedColumnName="id_user")
-     * })
-     */
-    private $useUser;
-
-
 
     /**
      * Get idExperience
@@ -86,12 +74,12 @@ class Experience
     /**
      * Set idUser
      *
-     * @param \Admin\AdminBundle\Entity\User $idUser
+     * @param \Application\Sonata\UserBundle\Entity\User $id
      * @return Experience
      */
-    public function setIdUser(\Admin\AdminBundle\Entity\User $idUser = null)
+    public function setIdUser(\Application\Sonata\UserBundle\Entity\User $id = null)
     {
-        $this->idUser = $idUser;
+        $this->idUser = $id;
     
         return $this;
     }
@@ -99,34 +87,11 @@ class Experience
     /**
      * Get idUser
      *
-     * @return \Admin\AdminBundle\Entity\User 
+     * @return \Application\Sonata\UserBundle\Entity\User 
      */
     public function getIdUser()
     {
         return $this->idUser;
-    }
-
-    /**
-     * Set useUser
-     *
-     * @param \Admin\AdminBundle\Entity\User $useUser
-     * @return Experience
-     */
-    public function setUseUser(\Admin\AdminBundle\Entity\User $useUser = null)
-    {
-        $this->useUser = $useUser;
-    
-        return $this;
-    }
-
-    /**
-     * Get useUser
-     *
-     * @return \Admin\AdminBundle\Entity\User 
-     */
-    public function getUseUser()
-    {
-        return $this->useUser;
     }
     
     public function __toString() {

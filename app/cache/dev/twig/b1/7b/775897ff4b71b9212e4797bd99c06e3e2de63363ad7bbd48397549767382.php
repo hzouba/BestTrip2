@@ -1,6 +1,6 @@
 <?php
 
-/* SonataUserBundle::layout.html.twig */
+/* FOSUserBundle::layout.html.twig */
 class __TwigTemplate_b17b775897ff4b71b9212e4797bd99c06e3e2de63363ad7bbd48397549767382 extends Twig_Template
 {
     public function __construct(Twig_Environment $env)
@@ -212,7 +212,7 @@ class __TwigTemplate_b17b775897ff4b71b9212e4797bd99c06e3e2de63363ad7bbd483975497
 
     public function getTemplateName()
     {
-        return "SonataUserBundle::layout.html.twig";
+        return "FOSUserBundle::layout.html.twig";
     }
 
     public function isTraitable()

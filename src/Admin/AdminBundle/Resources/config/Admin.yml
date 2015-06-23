@@ -9,13 +9,3 @@ services:
             - ~
         calls:
             - [ setTranslationDomain, [AdminAdminBundle]]
-    sonata.admin.user:
-        class: Admin\AdminBundle\Admin\UserAdmin
-        tags:
-            - { name: sonata.admin, manager_type: orm, group: "Content", label: "User" }
-        arguments:
-            - ~
-            - Admin\AdminBundle\Entity\User
-            - ~
-        calls:
-            - [ setTranslationDomain, [AdminAdminBundle]]

@@ -14,8 +14,7 @@ class ExperienceAdmin extends Admin
     {
         $formMapper
             ->add('dateAdd')
-            ->add('idUser', 'entity',array('class' => 'Admin\AdminBundle\Entity\User'))
-            ->add('useUser', 'entity',array('class' => 'Admin\AdminBundle\Entity\User'))
+            ->add('id', 'entity',array('class' => 'Application\Sonata\UserBundle\Entity\User'))
         ;
     }
 
@@ -24,8 +23,7 @@ class ExperienceAdmin extends Admin
     {
         $datagridMapper
             ->add('dateAdd')
-            ->add('idUser')
-            ->add('useUser')
+            ->add('id')
         ;
     }
 
@@ -34,8 +32,7 @@ class ExperienceAdmin extends Admin
     {
         $listMapper
             ->addIdentifier('dateAdd')
-            ->add('idUser', 'entity',array('class' => 'Admin\AdminBundle\Entity\User'))
-            ->add('useUser', 'entity',array('class' => 'Admin\AdminBundle\Entity\User'))
+            ->add('id', 'entity',array('class' => 'Application\Sonata\UserBundle\Entity\User'))
         ;
     }
 }
