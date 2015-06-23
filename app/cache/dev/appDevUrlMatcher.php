@@ -129,6 +129,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'BT\\FrontBundle\\Controller\\DefaultController::indexAction',  '_route' => 'bt_front_homepage',);
         }
 
+        // bt_front_experience
+        if ($pathinfo === '/experience') {
+            return array (  '_controller' => 'BTFrontBundle:Experience:addExperience',  '_route' => 'bt_front_experience',);
+        }
+
         // admin_admin_homepage
         if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_admin_homepage')), array (  '_controller' => 'Admin\\AdminBundle\\Controller\\DefaultController::indexAction',));

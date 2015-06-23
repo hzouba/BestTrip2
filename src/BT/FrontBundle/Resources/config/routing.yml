@@ -1,3 +1,7 @@
 bt_front_homepage:
     path:     /
     defaults: { _controller: BTFrontBundle:Default:index }
+    
+bt_front_experience:
+    path:     /experience
+    defaults: { _controller: BTFrontBundle:Experience:addExperience }

@@ -10,6 +10,8 @@ class __TwigTemplate_59954e6f258fe9553d34dd41ae05563130021cd84d67aace80fca83b851
         $this->parent = false;
 
         $this->blocks = array(
+            'bt_slider' => array($this, 'block_bt_slider'),
+            'bt_container' => array($this, 'block_bt_container'),
         );
     }
 
@@ -95,7 +97,18 @@ class __TwigTemplate_59954e6f258fe9553d34dd41ae05563130021cd84d67aace80fca83b851
                                             <img class=\"origin round\" src=\"";
         // line 56
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/img/40x40.png"), "html", null, true);
-        echo "\" alt=\"Image Alternative text\" title=\"AMaze\" />Hi, Zoubair</a>
+        echo "\" alt=\"Image Alternative text\" title=\"AMaze\" />
+                                            ";
+        // line 57
+        if ($this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array())) {
+            // line 58
+            echo "                                                Hi, ";
+            echo twig_escape_filter($this->env, $this->getAttribute((isset($context["app"]) ? $context["app"] : $this->getContext($context, "app")), "user", array()), "html", null, true);
+            echo "
+                                            ";
+        }
+        // line 60
+        echo "                                        </a>
                                     </li>
                                     <li><a href=\"#\">Sign Out</a>
                                     </li>
@@ -118,268 +131,16 @@ class __TwigTemplate_59954e6f258fe9553d34dd41ae05563130021cd84d67aace80fca83b851
             </div>
         </header>
 
-        <!-- TOP AREA -->
-        <div class=\"top-area show-onload\">
-            <div class=\"bg-holder full\">
-                <div class=\"bg-front full-height bg-front-mob-rel\">
-                    <div class=\"container full-height\">
-                        <div class=\"rel full-height\">
-                            <div class=\"tagline visible-lg\" id=\"tagline\"><span>It's time to</span>
-                                <ul>
-                                    <li>live</li>
-                                    <li>have fun</li>
-                                    <li>relax</li>
-                                    <li>meet</li>
-                                    <li>being lost</li>
-                                    <li>run away</li>
-                                    <li>go</li>
-                                    <li>explore</li>
-                                    <li>find new friends</li>
-                                    <li class=\"active\">discover</li>
-                                    <li>play</li>
-                                </ul>
-                            </div>
-                            <div class=\"search-tabs search-tabs-bg search-tabs-bottom mb50\">
-                                <div class=\"tabbable\">
-                                    <ul class=\"nav nav-tabs\" id=\"myTab\">
-                                        <li class=\"active\"><a href=\"#tab-1\" data-toggle=\"tab\"><i class=\"fa fa-building-o\"></i> <span >Best trip finder</span></a>
-                                        </li>
-                                    </ul>
-                                    <div class=\"tab-content\">
-                                        <div class=\"tab-pane fade in active\" id=\"tab-1\">
-                                            <h2>Search a country, a city, a restaurant, a flgiht, a place ...</h2>
-                                            <form>
-                                                <div class=\"row\">
-                                                    <div class=\"col-md-4\">
-                                                        <div class=\"form-group form-group-lg form-group-icon-left\"><i class=\"fa fa-map-marker input-icon\"></i>
-                                                            <label>What are you looking for?</label>
-                                                            <input class=\"typeahead form-control\" placeholder=\"Country, City, Restaurant, Flight...\" type=\"text\" />
-                                                        </div>
-                                                    </div>
-                                                </div>
-                                                <button class=\"btn btn-primary btn-lg\" type=\"submit\">Search</button>
-                                            </form>
-                                        </div>
-                                     </div>
-                                   </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class=\"owl-carousel owl-slider owl-carousel-area visible-lg\" id=\"owl-carousel-slider\" data-nav=\"false\">
-                    <div class=\"bg-holder full\">
-                        <div class=\"bg-mask\"></div>
-                        <div class=\"bg-img\" style=\"background-image:url(";
-        // line 130
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/img/2048x1365.png"), "html", null, true);
-        echo ");\"></div>
-                        
-                    </div>
-                    <div class=\"bg-holder full\">
-                        <div class=\"bg-mask\"></div>
-                        <div class=\"bg-img\" style=\"background-image:url(";
-        // line 135
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/img/2048x2048.png"), "html", null, true);
-        echo ");\"></div>
-                    </div>
-                    <div class=\"bg-holder full\">
-                        <div class=\"bg-mask\"></div>
-                        <div class=\"bg-img\" style=\"background-image:url(";
-        // line 139
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/img/2048x1365.png"), "html", null, true);
-        echo ");\"></div>
-                    </div>
-                </div>
-                <div class=\"bg-img hidden-lg\" style=\"background-image:url(";
-        // line 142
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/img/2048x1365.png"), "html", null, true);
-        echo ");\"></div>
-                <div class=\"bg-mask hidden-lg\"></div>
-            </div>
-        </div>
-        <!-- END TOP AREA  -->
-
-        <div class=\"container\">
-            <div class=\"gap\"></div>
-            <h2 class=\"text-center\">Top Experiences</h2>
-            <div class=\"gap\">
-                <div class=\"row row-wrap\">
-                    <div class=\"col-md-3\">
-                        <div class=\"thumb\">
-                            <header class=\"thumb-header\">
-                                <a class=\"hover-img curved\" href=\"#\">
-                                    <img src=\"";
-        // line 157
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/img/800x600.png"), "html", null, true);
-        echo "\" alt=\"Image Alternative text\" title=\"196_365\" />
-                                </a>
-                            </header>
-                            <div class=\"img-left\">
-                                <img src=\"";
-        // line 161
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/img/flags/32/fr.png"), "html", null, true);
-        echo "\" alt=\"Image Alternative text\" title=\"Image Title\" />
-                            </div>
-                            <div class=\"thumb-caption\">
-                                <h4 class=\"thumb-title\"><a class=\"text-darken\" href=\"#\">Paris</a></h4>
-                                <div class=\"thumb-caption\">
-                                    <p class=\"thumb-desc\">Nullam potenti ac sagittis iaculis justo</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class=\"col-md-3\">
-                        <div class=\"thumb\">
-                            <header class=\"thumb-header\">
-                                <a class=\"hover-img curved\" href=\"#\">
-                                    <img src=\"";
-        // line 175
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/img/800x600.png"), "html", null, true);
-        echo "\" alt=\"Image Alternative text\" title=\"El inevitable paso del tiempo\" />
-                                </a>
-                            </header>
-                            <div class=\"img-left\">
-                                <img src=\"";
-        // line 179
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/img/flags/32/hu.png"), "html", null, true);
-        echo "\" alt=\"Image Alternative text\" title=\"Image Title\" />
-                            </div>
-                            <div class=\"thumb-caption\">
-                                <h4 class=\"thumb-title\"><a class=\"text-darken\" href=\"#\">Budapest</a></h4>
-                                <div class=\"thumb-caption\">
-                                    <p class=\"thumb-desc\">Sociis interdum sed a senectus porta</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class=\"col-md-3\">
-                        <div class=\"thumb\">
-                            <header class=\"thumb-header\">
-                                <a class=\"hover-img curved\" href=\"#\">
-                                    <img src=\"";
-        // line 193
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/img/800x600.png"), "html", null, true);
-        echo "\" alt=\"Image Alternative text\" title=\"Upper Lake in New York Central Park\" />
-                                </a>
-                            </header>
-                            <div class=\"img-left\">
-                                <img src=\"";
-        // line 197
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/img/flags/32/us.png"), "html", null, true);
-        echo "\" alt=\"Image Alternative text\" title=\"Image Title\" />
-                            </div>
-                            <div class=\"thumb-caption\">
-                                <h4 class=\"thumb-title\"><a class=\"text-darken\" href=\"#\">New York</a></h4>
-                                <div class=\"thumb-caption\">
-                                    <p class=\"thumb-desc\">Erat ultricies auctor tellus natoque cursus</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class=\"col-md-3\">
-                        <div class=\"thumb\">
-                            <header class=\"thumb-header\">
-                                <a class=\"hover-img curved\" href=\"#\">
-                                    <img src=\"";
-        // line 211
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/img/800x600.png"), "html", null, true);
-        echo "\" alt=\"Image Alternative text\" title=\"196_365\" />
-                                </a>
-                            </header>
-                            <div class=\"img-left\">
-                                <img src=\"";
-        // line 215
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/img/flags/32/fr.png"), "html", null, true);
-        echo "\" alt=\"Image Alternative text\" title=\"Image Title\" />
-                            </div>
-                            <div class=\"thumb-caption\">
-                                <h4 class=\"thumb-title\"><a class=\"text-darken\" href=\"#\">Paris</a></h4>
-                                <div class=\"thumb-caption\">
-                                    <p class=\"thumb-desc\">Nullam potenti ac sagittis iaculis justo</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class=\"col-md-3\">
-                        <div class=\"thumb\">
-                            <header class=\"thumb-header\">
-                                <a class=\"hover-img curved\" href=\"#\">
-                                    <img src=\"";
-        // line 229
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/img/800x600.png"), "html", null, true);
-        echo "\" alt=\"Image Alternative text\" title=\"El inevitable paso del tiempo\" />
-                                </a>
-                            </header>
-                            <div class=\"img-left\">
-                                <img src=\"";
-        // line 233
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/img/flags/32/hu.png"), "html", null, true);
-        echo "\" alt=\"Image Alternative text\" title=\"Image Title\" />
-                            </div>
-                            <div class=\"thumb-caption\">
-                                <h4 class=\"thumb-title\"><a class=\"text-darken\" href=\"#\">Budapest</a></h4>
-                                <div class=\"thumb-caption\">
-                                    <p class=\"thumb-desc\">Sociis interdum sed a senectus porta</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class=\"col-md-3\">
-                        <div class=\"thumb\">
-                            <header class=\"thumb-header\">
-                                <a class=\"hover-img curved\" href=\"#\">
-                                    <img src=\"";
-        // line 247
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/img/800x600.png"), "html", null, true);
-        echo "\" alt=\"Image Alternative text\" title=\"Upper Lake in New York Central Park\" />
-                                </a>
-                            </header>
-                            <div class=\"img-left\">
-                                <img src=\"";
-        // line 251
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/img/flags/32/us.png"), "html", null, true);
-        echo "\" alt=\"Image Alternative text\" title=\"Image Title\" />
-                            </div>
-                            <div class=\"thumb-caption\">
-                                <h4 class=\"thumb-title\"><a class=\"text-darken\" href=\"#\">New York</a></h4>
-                                <div class=\"thumb-caption\">
-                                    <p class=\"thumb-desc\">Erat ultricies auctor tellus natoque cursus</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                    <div class=\"col-md-3\">
-                        <div class=\"thumb\">
-                            <header class=\"thumb-header\">
-                                <a class=\"hover-img curved\" href=\"#\">
-                                    <img src=\"";
-        // line 265
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/img/800x600.png"), "html", null, true);
-        echo "\" alt=\"Image Alternative text\" title=\"people on the beach\" />
-                                </a>
-                            </header>
-                            <div class=\"img-left\">
-                                <img src=\"";
-        // line 269
-        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/img/flags/32/gr.png"), "html", null, true);
-        echo "\" alt=\"Image Alternative text\" title=\"Image Title\" />
-                            </div>
-                            <div class=\"thumb-caption\">
-                                <h4 class=\"thumb-title\"><a class=\"text-darken\" href=\"#\">Crete</a></h4>
-                                <div class=\"thumb-caption\">
-                                    <p class=\"thumb-desc\">Cursus parturient commodo diam donec est</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-
-        </div>
-
-
-
+       ";
+        // line 83
+        $this->displayBlock('bt_slider', $context, $blocks);
+        // line 85
+        echo "
+       ";
+        // line 86
+        $this->displayBlock('bt_container', $context, $blocks);
+        // line 88
+        echo "
         <footer id=\"main-footer\">
             <div class=\"container\">
                 <div class=\"row row-wrap\">
@@ -391,7 +152,7 @@ class __TwigTemplate_59954e6f258fe9553d34dd41ae05563130021cd84d67aace80fca83b851
                     <div class=\"col-md-4\">
                         <a class=\"logo\" href=\"index.html\">
                             <img src=\"";
-        // line 297
+        // line 99
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/img/logo-invert.png"), "html", null, true);
         echo "\" alt=\"Image Alternative text\" title=\"Image Title\" />
                         </a>
@@ -443,78 +204,92 @@ class __TwigTemplate_59954e6f258fe9553d34dd41ae05563130021cd84d67aace80fca83b851
         </footer>
 
        <script src=\"";
-        // line 346
+        // line 148
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/js/jquery.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 347
+        // line 149
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/js/bootstrap.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 348
+        // line 150
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/js/bootstrap-datepicker.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 349
+        // line 151
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/js/bootstrap-timepicker.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 350
+        // line 152
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/js/dropit.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 351
+        // line 153
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/js/ionrangeslider.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 352
+        // line 154
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/js/icheck.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 353
+        // line 155
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/js/fotorama.js"), "html", null, true);
         echo "\"></script>
         <script src=\"https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false\"></script>
         <script src=\"";
-        // line 355
+        // line 157
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/js/typeahead.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 356
+        // line 158
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/js/card-payment.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 357
+        // line 159
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/js/magnific.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 358
+        // line 160
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/js/owl-carousel.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 359
+        // line 161
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/js/fitvids.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 360
+        // line 162
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/js/tweet.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 361
+        // line 163
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/js/countdown.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 362
+        // line 164
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/js/gridrotator.js"), "html", null, true);
         echo "\"></script>
         <script src=\"";
-        // line 363
+        // line 165
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/js/custom.js"), "html", null, true);
         echo "\"></script>
     </div>
 </body>
 
 </html>";
+    }
+
+    // line 83
+    public function block_bt_slider($context, array $blocks = array())
+    {
+        // line 84
+        echo "       ";
+    }
+
+    // line 86
+    public function block_bt_container($context, array $blocks = array())
+    {
+        // line 87
+        echo "       ";
     }
 
     public function getTemplateName()
@@ -529,6 +304,6 @@ class __TwigTemplate_59954e6f258fe9553d34dd41ae05563130021cd84d67aace80fca83b851
 
     public function getDebugInfo()
     {
-        return array (  512 => 363,  508 => 362,  504 => 361,  500 => 360,  496 => 359,  492 => 358,  488 => 357,  484 => 356,  480 => 355,  475 => 353,  471 => 352,  467 => 351,  463 => 350,  459 => 349,  455 => 348,  451 => 347,  447 => 346,  395 => 297,  364 => 269,  357 => 265,  340 => 251,  333 => 247,  316 => 233,  309 => 229,  292 => 215,  285 => 211,  268 => 197,  261 => 193,  244 => 179,  237 => 175,  220 => 161,  213 => 157,  195 => 142,  189 => 139,  182 => 135,  174 => 130,  97 => 56,  86 => 48,  56 => 21,  52 => 20,  48 => 19,  44 => 18,  40 => 17,  36 => 16,  19 => 1,);
+        return array (  292 => 87,  289 => 86,  285 => 84,  282 => 83,  273 => 165,  269 => 164,  265 => 163,  261 => 162,  257 => 161,  253 => 160,  249 => 159,  245 => 158,  241 => 157,  236 => 155,  232 => 154,  228 => 153,  224 => 152,  220 => 151,  216 => 150,  212 => 149,  208 => 148,  156 => 99,  143 => 88,  141 => 86,  138 => 85,  136 => 83,  111 => 60,  105 => 58,  103 => 57,  99 => 56,  88 => 48,  58 => 21,  54 => 20,  50 => 19,  46 => 18,  42 => 17,  38 => 16,  21 => 1,);
     }
 }
