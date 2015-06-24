@@ -33,23 +33,27 @@ class __TwigTemplate_d91fd677f173c4d2feb8eee05201e5d9486b3ea7fb027a9fa4a22937c9c
         <h1 class=\"page-title\">Add Experience</h1>
             <div class=\"row\">
                 <div class=\"col-md-7\">
-                    <form class=\"mt30\">
+                    <form class=\"mt30\" method=\"post\">
                                 <div class=\"form-group\">
-                                    <label>Description</label>
-                                    <input class=\"form-control\" type=\"text\" />
+                                    <label>Name</label>
+                                    ";
+        // line 12
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "name", array()), 'widget');
+        echo "
                                 </div>
                             
                                 <div class=\"form-group\">
-                                    <label>Picture</label>
-                                    <input class=\"form-control\" type=\"text\" />
+                                    <label>Date</label>
+                                    ";
+        // line 17
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "dateAdd", array()), 'widget');
+        echo "
                                 </div>
                             
-                                <div class=\"form-group\">
-                                    <label>Video</label>
-                                    <input class=\"form-control\" type=\"text\" />
-                                </div>
-                            
-                        
+                        ";
+        // line 20
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock($this->getAttribute((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), "_token", array()), 'widget');
+        echo "
                         <input class=\"btn btn-primary\" type=\"submit\" value=\"Add Experience\" />
                     </form>
                 </div>
@@ -75,6 +79,6 @@ class __TwigTemplate_d91fd677f173c4d2feb8eee05201e5d9486b3ea7fb027a9fa4a22937c9c
 
     public function getDebugInfo()
     {
-        return array (  31 => 4,  28 => 3,  11 => 1,);
+        return array (  55 => 20,  49 => 17,  41 => 12,  31 => 4,  28 => 3,  11 => 1,);
     }
 }

@@ -129,9 +129,17 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
             return array (  '_controller' => 'BT\\FrontBundle\\Controller\\DefaultController::indexAction',  '_route' => 'bt_front_homepage',);
         }
 
-        // bt_front_experience
-        if ($pathinfo === '/experience') {
-            return array (  '_controller' => 'BTFrontBundle:Experience:addExperience',  '_route' => 'bt_front_experience',);
+        if (0 === strpos($pathinfo, '/experience')) {
+            // bt_front_experience
+            if ($pathinfo === '/experience') {
+                return array (  '_controller' => 'BT\\FrontBundle\\Controller\\ExperienceController::addExperienceAction',  '_route' => 'bt_front_experience',);
+            }
+
+            // bt_front_experience_object
+            if ($pathinfo === '/experience_details') {
+                return array (  '_controller' => 'BT\\FrontBundle\\Controller\\ExperienceObjectController::addExperienceObjectAction',  '_route' => 'bt_front_experience_object',);
+            }
+
         }
 
         // admin_admin_homepage

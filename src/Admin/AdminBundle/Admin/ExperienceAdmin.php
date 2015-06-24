@@ -13,8 +13,10 @@ class ExperienceAdmin extends Admin
     protected function configureFormFields(FormMapper $formMapper)
     {
         $formMapper
+            ->add('name')
             ->add('dateAdd')
             ->add('idUser', 'entity',array('class' => 'Application\Sonata\UserBundle\Entity\User'))
+            ->add('isValid')
         ;
     }
 
@@ -22,8 +24,10 @@ class ExperienceAdmin extends Admin
     protected function configureDatagridFilters(DatagridMapper $datagridMapper)
     {
         $datagridMapper
+            ->add('name')
             ->add('dateAdd')
             ->add('idUser')
+            ->add('isValid')
         ;
     }
 
@@ -31,8 +35,10 @@ class ExperienceAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->addIdentifier('dateAdd')
+            ->add('name', null, array('editable' => true))
+            ->add('dateAdd')
             ->add('idUser', 'entity',array('class' => 'Application\Sonata\UserBundle\Entity\User'))
+            ->add('isValid', null, array('editable' => true))
         ;
     }
 }

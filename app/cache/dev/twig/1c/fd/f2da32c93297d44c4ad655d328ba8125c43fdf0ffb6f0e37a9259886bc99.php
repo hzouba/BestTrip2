@@ -11,6 +11,7 @@ class __TwigTemplate_1cfdf2da32c93297d44c4ad655d328ba8125c43fdf0ffb6f0e37a925988
         $this->parent = $this->loadTemplate("BTFrontBundle::layout.html.twig", "BTFrontBundle:Default:index.html.twig", 1);
         $this->blocks = array(
             'bt_container' => array($this, 'block_bt_container'),
+            'bt_slider' => array($this, 'block_bt_slider'),
         );
     }
 
@@ -211,6 +212,95 @@ class __TwigTemplate_1cfdf2da32c93297d44c4ad655d328ba8125c43fdf0ffb6f0e37a925988
 ";
     }
 
+    // line 144
+    public function block_bt_slider($context, array $blocks = array())
+    {
+        // line 145
+        echo "    
+    <!-- TOP AREA -->
+        <div class=\"top-area show-onload\">
+            <div class=\"bg-holder full\">
+                <div class=\"bg-front full-height bg-front-mob-rel\">
+                    <div class=\"container full-height\">
+                        <div class=\"rel full-height\">
+                            <div class=\"tagline visible-lg\" id=\"tagline\"><span>It's time to</span>
+                                <ul>
+                                    <li>live</li>
+                                    <li>have fun</li>
+                                    <li>relax</li>
+                                    <li>meet</li>
+                                    <li>being lost</li>
+                                    <li>run away</li>
+                                    <li>go</li>
+                                    <li>explore</li>
+                                    <li>find new friends</li>
+                                    <li class=\"active\">discover</li>
+                                    <li>play</li>
+                                </ul>
+                            </div>
+                            <div class=\"search-tabs search-tabs-bg search-tabs-bottom mb50\">
+                                <div class=\"tabbable\">
+                                    <ul class=\"nav nav-tabs\" id=\"myTab\">
+                                        <li class=\"active\"><a href=\"#tab-1\" data-toggle=\"tab\"><i class=\"fa fa-building-o\"></i> <span >Best trip finder</span></a>
+                                        </li>
+                                    </ul>
+                                    <div class=\"tab-content\">
+                                        <div class=\"tab-pane fade in active\" id=\"tab-1\">
+                                            <h2>Search a country, a city, a restaurant, a flgiht, a place ...</h2>
+                                            <form>
+                                                <div class=\"row\">
+                                                    <div class=\"col-md-4\">
+                                                        <div class=\"form-group form-group-lg form-group-icon-left\"><i class=\"fa fa-map-marker input-icon\"></i>
+                                                            <label>What are you looking for?</label>
+                                                            <input class=\"typeahead form-control\" placeholder=\"Country, City, Restaurant, Flight...\" type=\"text\" />
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <button class=\"btn btn-primary btn-lg\" type=\"submit\">Search</button>
+                                            </form>
+                                        </div>
+                                     </div>
+                                   </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class=\"owl-carousel owl-slider owl-carousel-area visible-lg\" id=\"owl-carousel-slider\" data-nav=\"false\">
+                    <div class=\"bg-holder full\">
+                        <div class=\"bg-mask\"></div>
+                        <div class=\"bg-img\" style=\"background-image:url(";
+        // line 197
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/img/2048x1365.png"), "html", null, true);
+        echo ");\"></div>
+                        
+                    </div>
+                    <div class=\"bg-holder full\">
+                        <div class=\"bg-mask\"></div>
+                        <div class=\"bg-img\" style=\"background-image:url(";
+        // line 202
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/img/2048x2048.png"), "html", null, true);
+        echo ");\"></div>
+                    </div>
+                    <div class=\"bg-holder full\">
+                        <div class=\"bg-mask\"></div>
+                        <div class=\"bg-img\" style=\"background-image:url(";
+        // line 206
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/img/2048x1365.png"), "html", null, true);
+        echo ");\"></div>
+                    </div>
+                </div>
+                <div class=\"bg-img hidden-lg\" style=\"background-image:url(";
+        // line 209
+        echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/img/2048x1365.png"), "html", null, true);
+        echo ");\"></div>
+                <div class=\"bg-mask hidden-lg\"></div>
+            </div>
+        </div>
+        <!-- END TOP AREA  -->
+    
+";
+    }
+
     public function getTemplateName()
     {
         return "BTFrontBundle:Default:index.html.twig";
@@ -223,6 +313,6 @@ class __TwigTemplate_1cfdf2da32c93297d44c4ad655d328ba8125c43fdf0ffb6f0e37a925988
 
     public function getDebugInfo()
     {
-        return array (  194 => 126,  187 => 122,  170 => 108,  163 => 104,  146 => 90,  139 => 86,  122 => 72,  115 => 68,  98 => 54,  91 => 50,  74 => 36,  67 => 32,  50 => 18,  43 => 14,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  294 => 209,  288 => 206,  281 => 202,  273 => 197,  219 => 145,  216 => 144,  195 => 126,  188 => 122,  171 => 108,  164 => 104,  147 => 90,  140 => 86,  123 => 72,  116 => 68,  99 => 54,  92 => 50,  75 => 36,  68 => 32,  51 => 18,  44 => 14,  32 => 4,  29 => 3,  11 => 1,);
     }
 }

@@ -31,6 +31,13 @@ class ExperienceObject
     /**
      * @var string
      *
+     * @ORM\Column(name="cost", type="string", length=254, nullable=true)
+     */
+    private $cost;
+
+    /**
+     * @var string
+     *
      * @ORM\Column(name="picture", type="string", length=254, nullable=true)
      */
     private $picture;
@@ -51,6 +58,16 @@ class ExperienceObject
      * })
      */
     private $idObjectType;
+
+    /**
+     * @var \Experience
+     *
+     * @ORM\ManyToOne(targetEntity="Experience")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_experience", referencedColumnName="id_experience")
+     * })
+     */
+    private $idExperience;
 
 
 
@@ -85,6 +102,29 @@ class ExperienceObject
     public function getDescription()
     {
         return $this->description;
+    }
+
+    /**
+     * Set cost
+     *
+     * @param string $cost
+     * @return ExperienceObject
+     */
+    public function setCost($cost)
+    {
+        $this->cost = $cost;
+    
+        return $this;
+    }
+
+    /**
+     * Get cost
+     *
+     * @return string 
+     */
+    public function getCost()
+    {
+        return $this->cost;
     }
 
     /**
@@ -155,4 +195,28 @@ class ExperienceObject
     {
         return $this->idObjectType;
     }
+
+    /**
+     * Set idExperience
+     *
+     * @param \Admin\AdminBundle\Entity\Experience $idExperience
+     * @return ExperienceObject
+     */
+    public function setIdExperience(\Admin\AdminBundle\Entity\Experience $idExperience = null)
+    {
+        $this->idExperience = $idExperience;
+    
+        return $this;
+    }
+
+    /**
+     * Get idExperience
+     *
+     * @return \Admin\AdminBundle\Entity\Experience 
+     */
+    public function getIdExperience()
+    {
+        return $this->idExperience;
+    }
+    
 }

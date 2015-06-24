@@ -5,3 +5,7 @@ bt_front_homepage:
 bt_front_experience:
     path:     /experience
     defaults: { _controller: BTFrontBundle:Experience:addExperience }
+    
+bt_front_experience_object:
+    path:     /experience_details
+    defaults: { _controller: BTFrontBundle:ExperienceObject:addExperienceObject }

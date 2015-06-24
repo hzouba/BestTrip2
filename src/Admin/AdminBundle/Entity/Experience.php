@@ -22,9 +22,16 @@ class Experience
     private $idExperience;
 
     /**
-     * @var \DateTime
+     * @var string
      *
-     * @ORM\Column(name="date_add", type="datetime", nullable=true)
+     * @ORM\Column(name="name", type="string", length=254, nullable=true)
+     */
+    private $name;
+
+    /**
+     * @var \Date
+     *
+     * @ORM\Column(name="date_add", type="date", nullable=true)
      */
     private $dateAdd;
 
@@ -37,6 +44,13 @@ class Experience
      * })
      */
     private $idUser;
+    
+    /**
+     * @var integer
+     *
+     * @ORM\Column(name="isValid", type="integer", nullable=false)
+     */
+    private $isValid;
 
     /**
      * Get idExperience
@@ -47,11 +61,35 @@ class Experience
     {
         return $this->idExperience;
     }
+    
+    
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return Experience
+     */
+    public function setName($name)
+    {
+        $this->name = $name;
+    
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName()
+    {
+        return $this->name;
+    }
 
     /**
      * Set dateAdd
      *
-     * @param \DateTime $dateAdd
+     * @param \Date $dateAdd
      * @return Experience
      */
     public function setDateAdd($dateAdd)
@@ -64,7 +102,7 @@ class Experience
     /**
      * Get dateAdd
      *
-     * @return \DateTime 
+     * @return \Date
      */
     public function getDateAdd()
     {
@@ -94,7 +132,30 @@ class Experience
         return $this->idUser;
     }
     
+    /**
+     * Set isValid
+     *
+     * @param integer $name
+     * @return Experience
+     */
+    public function setIsValid($isValid)
+    {
+        $this->isValid = $isValid;
+    
+        return $this;
+    }
+
+    /**
+     * Get isValid
+     *
+     * @return integer 
+     */
+    public function getIsValid()
+    {
+        return $this->isValid;
+    }
+    
     public function __toString() {
-        return $this->dateAdd.''.$this->idUser;
+        return $this->name.''.$this->dateAdd.''.$this->idUser;
     }
 }

@@ -62,4 +62,8 @@ class TypeObject
     {
         return $this->objectName;
     }
+    
+    public function __toString() {
+        return $this->objectName;
+    }
 }
