@@ -33,7 +33,10 @@ class __TwigTemplate_b4faba3587341a6873ae42f207b13353575ad7aafbe9c658679bf1af15f
         <h1 class=\"page-title\">Add Experience</h1>
             <div class=\"row\">
                 <div class=\"col-md-7\">
-                    <form class=\"mt30\" method=\"post\">
+                    <form class=\"mt30\" method=\"post\" ";
+        // line 9
+        echo $this->env->getExtension('form')->renderer->searchAndRenderBlock((isset($context["form"]) ? $context["form"] : $this->getContext($context, "form")), 'enctype');
+        echo ">
                                 <div class=\"form-group\">
                                     <label>Description</label>
                                     ";
@@ -110,6 +113,6 @@ class __TwigTemplate_b4faba3587341a6873ae42f207b13353575ad7aafbe9c658679bf1af15f
 
     public function getDebugInfo()
     {
-        return array (  86 => 39,  80 => 36,  72 => 31,  64 => 26,  56 => 21,  48 => 16,  41 => 12,  31 => 4,  28 => 3,  11 => 1,);
+        return array (  89 => 39,  83 => 36,  75 => 31,  67 => 26,  59 => 21,  51 => 16,  44 => 12,  38 => 9,  31 => 4,  28 => 3,  11 => 1,);
     }
 }

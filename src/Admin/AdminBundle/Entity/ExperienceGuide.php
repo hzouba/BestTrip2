@@ -83,4 +83,8 @@ class ExperienceGuide
     {
         return $this->idExperience;
     }
+    
+    public function __toString() {
+        return $this->idExperience;
+    }
 }

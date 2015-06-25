@@ -6,7 +6,7 @@
         <h1 class="page-title">Add Experience</h1>
             <div class="row">
                 <div class="col-md-7">
-                    <form class="mt30" method="post">
+                    <form class="mt30" method="post" {{form_enctype(form)}}>
                                 <div class="form-group">
                                     <label>Description</label>
                                     {{form_widget(form.description)}}

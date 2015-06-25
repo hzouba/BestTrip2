@@ -29,9 +29,9 @@ class PersonalizedGuide
     private $idUser;
 
     /**
-     * @var \DateTime
+     * @var \Date
      *
-     * @ORM\Column(name="date_creation", type="datetime", nullable=true)
+     * @ORM\Column(name="date_creation", type="date", nullable=true)
      */
     private $dateCreation;
 
@@ -91,5 +91,8 @@ class PersonalizedGuide
     public function getDateCreation()
     {
         return $this->dateCreation;
+    }
+     public function __toString() {
+        return $this->idGuide.''.$this->idUser;
     }
 }

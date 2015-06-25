@@ -17,8 +17,8 @@ class ExperienceObjectType extends AbstractType
         $builder
             ->add('description')
             ->add('cost')
-            ->add('picture')
-            ->add('video')
+            ->add('picture','file')
+            ->add('video','file')
             ->add('idObjectType','entity',array('class'=>'AdminAdminBundle:TypeObject','property'=>'objectName'))
             ->add('idExperience','entity',array('class'=>'AdminAdminBundle:Experience','property'=>'name'))
         ;
