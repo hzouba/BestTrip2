@@ -21,17 +21,23 @@ class Feedback
      */
     private $id;
 
-    /**
-     * @var integer
+   /**
+     * @var \Application\Sonata\UserBundle\Entity\User
      *
-     * @ORM\Column(name="id_user", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="\Application\Sonata\UserBundle\Entity\User")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_user", referencedColumnName="id")
+     * })
      */
     private $idUser;
-
-    /**
-     * @var integer
+    
+       /**
+     * @var \Experience
      *
-     * @ORM\Column(name="id_experience", type="integer", nullable=false)
+     * @ORM\ManyToOne(targetEntity="Experience")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_experience", referencedColumnName="id_experience")
+     * })
      */
     private $idExperience;
 
@@ -152,4 +158,5 @@ class Feedback
     {
         return $this->raiting;
     }
+    
 }

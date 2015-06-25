@@ -9,3 +9,7 @@ bt_front_experience:
 bt_front_experience_object:
     path:     /experience_details
     defaults: { _controller: BTFrontBundle:ExperienceObject:addExperienceObject }
+
+bt_front_experience_feedback:
+    path:     /experience_feedback
+    defaults: { _controller: BTFrontBundle:Feedback:addFeedback }

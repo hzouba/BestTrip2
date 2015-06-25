@@ -63,28 +63,16 @@ class Experience extends \Admin\AdminBundle\Entity\Experience implements \Doctri
         return parent::getDateAdd();
     }
 
-    public function setIdUser(\Admin\AdminBundle\Entity\User $idUser = NULL)
+    public function setIdUser(\Application\Sonata\UserBundle\Entity\User $id = NULL)
     {
         $this->__load();
-        return parent::setIdUser($idUser);
+        return parent::setIdUser($id);
     }
 
     public function getIdUser()
     {
         $this->__load();
         return parent::getIdUser();
-    }
-
-    public function setUseUser(\Admin\AdminBundle\Entity\User $useUser = NULL)
-    {
-        $this->__load();
-        return parent::setUseUser($useUser);
-    }
-
-    public function getUseUser()
-    {
-        $this->__load();
-        return parent::getUseUser();
     }
 
     public function __toString()
@@ -96,7 +84,7 @@ class Experience extends \Admin\AdminBundle\Entity\Experience implements \Doctri
 
     public function __sleep()
     {
-        return array('__isInitialized__', 'idExperience', 'dateAdd', 'idUser', 'useUser');
+        return array('__isInitialized__', 'idExperience', 'dateAdd', 'idUser');
     }
 
     public function __clone()

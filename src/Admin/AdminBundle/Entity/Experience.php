@@ -156,6 +156,6 @@ class Experience
     }
     
     public function __toString() {
-        return $this->name.''.$this->dateAdd.''.$this->idUser;
+        return $this->name.''.$this->idUser;
     }
 }

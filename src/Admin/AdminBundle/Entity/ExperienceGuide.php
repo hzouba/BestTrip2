@@ -13,11 +13,14 @@ use Doctrine\ORM\Mapping as ORM;
 class ExperienceGuide
 {
     /**
-     * @var integer
+     * @var \PersonalizedGuide
      *
-     * @ORM\Column(name="id_guide", type="integer", nullable=false)
      * @ORM\Id
      * @ORM\GeneratedValue(strategy="NONE")
+     * @ORM\OneToOne(targetEntity="PersonalizedGuide")
+     * @ORM\JoinColumns({
+     * @ORM\JoinColumn(name="id_guide", referencedColumnName="id_guide")
+     * })
      */
     private $idGuide;
 

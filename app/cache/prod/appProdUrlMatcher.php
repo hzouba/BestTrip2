@@ -34,6 +34,11 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
             return array (  '_controller' => 'BT\\FrontBundle\\Controller\\DefaultController::indexAction',  '_route' => 'bt_front_homepage',);
         }
 
+        // bt_front_experience
+        if ($pathinfo === '/experience') {
+            return array (  '_controller' => 'BT\\FrontBundle\\Controller\\ExperienceController::addExperienceAction',  '_route' => 'bt_front_experience',);
+        }
+
         // admin_admin_homepage
         if (0 === strpos($pathinfo, '/hello') && preg_match('#^/hello/(?P<name>[^/]++)$#s', $pathinfo, $matches)) {
             return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_admin_homepage')), array (  '_controller' => 'Admin\\AdminBundle\\Controller\\DefaultController::indexAction',));
@@ -87,81 +92,40 @@ class appProdUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirecta
                 return array (  '_controller' => 'sonata.admin.controller.admin:retrieveAutocompleteItemsAction',  '_route' => 'sonata_admin_retrieve_autocomplete_items',);
             }
 
-            if (0 === strpos($pathinfo, '/admin/admin/admin')) {
-                if (0 === strpos($pathinfo, '/admin/admin/admin/experience')) {
-                    // admin_admin_admin_experience_list
-                    if ($pathinfo === '/admin/admin/admin/experience/list') {
-                        return array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::listAction',  '_sonata_admin' => 'sonata.admin.experience',  '_sonata_name' => 'admin_admin_admin_experience_list',  '_route' => 'admin_admin_admin_experience_list',);
-                    }
-
-                    // admin_admin_admin_experience_create
-                    if ($pathinfo === '/admin/admin/admin/experience/create') {
-                        return array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::createAction',  '_sonata_admin' => 'sonata.admin.experience',  '_sonata_name' => 'admin_admin_admin_experience_create',  '_route' => 'admin_admin_admin_experience_create',);
-                    }
-
-                    // admin_admin_admin_experience_batch
-                    if ($pathinfo === '/admin/admin/admin/experience/batch') {
-                        return array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::batchAction',  '_sonata_admin' => 'sonata.admin.experience',  '_sonata_name' => 'admin_admin_admin_experience_batch',  '_route' => 'admin_admin_admin_experience_batch',);
-                    }
-
-                    // admin_admin_admin_experience_edit
-                    if (preg_match('#^/admin/admin/admin/experience/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
-                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_admin_admin_experience_edit')), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction',  '_sonata_admin' => 'sonata.admin.experience',  '_sonata_name' => 'admin_admin_admin_experience_edit',));
-                    }
-
-                    // admin_admin_admin_experience_delete
-                    if (preg_match('#^/admin/admin/admin/experience/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
-                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_admin_admin_experience_delete')), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction',  '_sonata_admin' => 'sonata.admin.experience',  '_sonata_name' => 'admin_admin_admin_experience_delete',));
-                    }
-
-                    // admin_admin_admin_experience_show
-                    if (preg_match('#^/admin/admin/admin/experience/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
-                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_admin_admin_experience_show')), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction',  '_sonata_admin' => 'sonata.admin.experience',  '_sonata_name' => 'admin_admin_admin_experience_show',));
-                    }
-
-                    // admin_admin_admin_experience_export
-                    if ($pathinfo === '/admin/admin/admin/experience/export') {
-                        return array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::exportAction',  '_sonata_admin' => 'sonata.admin.experience',  '_sonata_name' => 'admin_admin_admin_experience_export',  '_route' => 'admin_admin_admin_experience_export',);
-                    }
-
+            if (0 === strpos($pathinfo, '/admin/admin/admin/experience')) {
+                // admin_admin_admin_experience_list
+                if ($pathinfo === '/admin/admin/admin/experience/list') {
+                    return array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::listAction',  '_sonata_admin' => 'sonata.admin.experience',  '_sonata_name' => 'admin_admin_admin_experience_list',  '_route' => 'admin_admin_admin_experience_list',);
                 }
 
-                if (0 === strpos($pathinfo, '/admin/admin/admin/user')) {
-                    // admin_admin_admin_user_list
-                    if ($pathinfo === '/admin/admin/admin/user/list') {
-                        return array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::listAction',  '_sonata_admin' => 'sonata.admin.user',  '_sonata_name' => 'admin_admin_admin_user_list',  '_route' => 'admin_admin_admin_user_list',);
-                    }
+                // admin_admin_admin_experience_create
+                if ($pathinfo === '/admin/admin/admin/experience/create') {
+                    return array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::createAction',  '_sonata_admin' => 'sonata.admin.experience',  '_sonata_name' => 'admin_admin_admin_experience_create',  '_route' => 'admin_admin_admin_experience_create',);
+                }
 
-                    // admin_admin_admin_user_create
-                    if ($pathinfo === '/admin/admin/admin/user/create') {
-                        return array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::createAction',  '_sonata_admin' => 'sonata.admin.user',  '_sonata_name' => 'admin_admin_admin_user_create',  '_route' => 'admin_admin_admin_user_create',);
-                    }
+                // admin_admin_admin_experience_batch
+                if ($pathinfo === '/admin/admin/admin/experience/batch') {
+                    return array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::batchAction',  '_sonata_admin' => 'sonata.admin.experience',  '_sonata_name' => 'admin_admin_admin_experience_batch',  '_route' => 'admin_admin_admin_experience_batch',);
+                }
 
-                    // admin_admin_admin_user_batch
-                    if ($pathinfo === '/admin/admin/admin/user/batch') {
-                        return array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::batchAction',  '_sonata_admin' => 'sonata.admin.user',  '_sonata_name' => 'admin_admin_admin_user_batch',  '_route' => 'admin_admin_admin_user_batch',);
-                    }
+                // admin_admin_admin_experience_edit
+                if (preg_match('#^/admin/admin/admin/experience/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_admin_admin_experience_edit')), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction',  '_sonata_admin' => 'sonata.admin.experience',  '_sonata_name' => 'admin_admin_admin_experience_edit',));
+                }
 
-                    // admin_admin_admin_user_edit
-                    if (preg_match('#^/admin/admin/admin/user/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
-                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_admin_admin_user_edit')), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction',  '_sonata_admin' => 'sonata.admin.user',  '_sonata_name' => 'admin_admin_admin_user_edit',));
-                    }
+                // admin_admin_admin_experience_delete
+                if (preg_match('#^/admin/admin/admin/experience/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_admin_admin_experience_delete')), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction',  '_sonata_admin' => 'sonata.admin.experience',  '_sonata_name' => 'admin_admin_admin_experience_delete',));
+                }
 
-                    // admin_admin_admin_user_delete
-                    if (preg_match('#^/admin/admin/admin/user/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
-                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_admin_admin_user_delete')), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction',  '_sonata_admin' => 'sonata.admin.user',  '_sonata_name' => 'admin_admin_admin_user_delete',));
-                    }
+                // admin_admin_admin_experience_show
+                if (preg_match('#^/admin/admin/admin/experience/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
+                    return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_admin_admin_experience_show')), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction',  '_sonata_admin' => 'sonata.admin.experience',  '_sonata_name' => 'admin_admin_admin_experience_show',));
+                }
 
-                    // admin_admin_admin_user_show
-                    if (preg_match('#^/admin/admin/admin/user/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
-                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_admin_admin_user_show')), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction',  '_sonata_admin' => 'sonata.admin.user',  '_sonata_name' => 'admin_admin_admin_user_show',));
-                    }
-
-                    // admin_admin_admin_user_export
-                    if ($pathinfo === '/admin/admin/admin/user/export') {
-                        return array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::exportAction',  '_sonata_admin' => 'sonata.admin.user',  '_sonata_name' => 'admin_admin_admin_user_export',  '_route' => 'admin_admin_admin_user_export',);
-                    }
-
+                // admin_admin_admin_experience_export
+                if ($pathinfo === '/admin/admin/admin/experience/export') {
+                    return array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::exportAction',  '_sonata_admin' => 'sonata.admin.experience',  '_sonata_name' => 'admin_admin_admin_experience_export',  '_route' => 'admin_admin_admin_experience_export',);
                 }
 
             }
