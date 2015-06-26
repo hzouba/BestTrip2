@@ -280,44 +280,6 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
 
                 }
 
-                if (0 === strpos($pathinfo, '/admin/admin/admin/experienceguide')) {
-                    // admin_admin_admin_experienceguide_list
-                    if ($pathinfo === '/admin/admin/admin/experienceguide/list') {
-                        return array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::listAction',  '_sonata_admin' => 'sonata.admin.experienceaffectation',  '_sonata_name' => 'admin_admin_admin_experienceguide_list',  '_route' => 'admin_admin_admin_experienceguide_list',);
-                    }
-
-                    // admin_admin_admin_experienceguide_create
-                    if ($pathinfo === '/admin/admin/admin/experienceguide/create') {
-                        return array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::createAction',  '_sonata_admin' => 'sonata.admin.experienceaffectation',  '_sonata_name' => 'admin_admin_admin_experienceguide_create',  '_route' => 'admin_admin_admin_experienceguide_create',);
-                    }
-
-                    // admin_admin_admin_experienceguide_batch
-                    if ($pathinfo === '/admin/admin/admin/experienceguide/batch') {
-                        return array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::batchAction',  '_sonata_admin' => 'sonata.admin.experienceaffectation',  '_sonata_name' => 'admin_admin_admin_experienceguide_batch',  '_route' => 'admin_admin_admin_experienceguide_batch',);
-                    }
-
-                    // admin_admin_admin_experienceguide_edit
-                    if (preg_match('#^/admin/admin/admin/experienceguide/(?P<id>[^/]++)/edit$#s', $pathinfo, $matches)) {
-                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_admin_admin_experienceguide_edit')), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::editAction',  '_sonata_admin' => 'sonata.admin.experienceaffectation',  '_sonata_name' => 'admin_admin_admin_experienceguide_edit',));
-                    }
-
-                    // admin_admin_admin_experienceguide_delete
-                    if (preg_match('#^/admin/admin/admin/experienceguide/(?P<id>[^/]++)/delete$#s', $pathinfo, $matches)) {
-                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_admin_admin_experienceguide_delete')), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::deleteAction',  '_sonata_admin' => 'sonata.admin.experienceaffectation',  '_sonata_name' => 'admin_admin_admin_experienceguide_delete',));
-                    }
-
-                    // admin_admin_admin_experienceguide_show
-                    if (preg_match('#^/admin/admin/admin/experienceguide/(?P<id>[^/]++)/show$#s', $pathinfo, $matches)) {
-                        return $this->mergeDefaults(array_replace($matches, array('_route' => 'admin_admin_admin_experienceguide_show')), array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::showAction',  '_sonata_admin' => 'sonata.admin.experienceaffectation',  '_sonata_name' => 'admin_admin_admin_experienceguide_show',));
-                    }
-
-                    // admin_admin_admin_experienceguide_export
-                    if ($pathinfo === '/admin/admin/admin/experienceguide/export') {
-                        return array (  '_controller' => 'Sonata\\AdminBundle\\Controller\\CRUDController::exportAction',  '_sonata_admin' => 'sonata.admin.experienceaffectation',  '_sonata_name' => 'admin_admin_admin_experienceguide_export',  '_route' => 'admin_admin_admin_experienceguide_export',);
-                    }
-
-                }
-
             }
 
             if (0 === strpos($pathinfo, '/admin/sonata/user')) {

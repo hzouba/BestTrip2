@@ -14,9 +14,9 @@ class ExperienceAdmin extends Admin
     {
         $formMapper
             ->add('name')
-            ->add('dateAdd')
-            ->add('idUser', 'entity',array('class' => 'Application\Sonata\UserBundle\Entity\User'))
-            ->add('isValid')
+            ->add('dateAdd', null, array('label' => 'Add date'))
+            ->add('isValid', null, array('label' => 'Enable'))
+            ->add('idGuide', null, array('label' => 'Guide'))
         ;
     }
 
@@ -25,9 +25,9 @@ class ExperienceAdmin extends Admin
     {
         $datagridMapper
             ->add('name')
-            ->add('dateAdd')
-            ->add('idUser')
-            ->add('isValid')
+            ->add('dateAdd', null, array('label' => 'Add date'))
+            ->add('isValid', null, array('label' => 'Enable'))
+            ->add('idGuide', null, array('label' => 'Guide'))
         ;
     }
 
@@ -35,10 +35,18 @@ class ExperienceAdmin extends Admin
     protected function configureListFields(ListMapper $listMapper)
     {
         $listMapper
-            ->add('name', null, array('editable' => true))
-            ->add('dateAdd')
-            ->add('idUser', 'entity',array('class' => 'Application\Sonata\UserBundle\Entity\User'))
-            ->add('isValid', null, array('editable' => true))
+            ->addIdentifier('name')
+            ->add('dateAdd', null, array('label' => 'Add date'))
+            ->add('idUser', 'entity',array('class' => 'Application\Sonata\UserBundle\Entity\User','label' => 'User'))
+            ->add('isValid', null, array('editable' => true,'label' => 'Enable'))
+            ->add('idGuide', null, array('label' => 'Guide'))
+            ->add('_action', 'actions', array(
+                    'actions' => array(
+                        'show' => array(),
+                        'edit' => array(),
+                        'delete' => array(),
+                    )
+                ))
         ;
     }
 }

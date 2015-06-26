@@ -12,20 +12,10 @@ services:
     sonata.admin.Guide:
         class: Admin\AdminBundle\Admin\GuideAdmin
         tags:
-            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Personaliased Guide" }
+            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Custom Guide" }
         arguments:
             - ~
             - Admin\AdminBundle\Entity\PersonalizedGuide
-            - ~
-        calls:
-            - [ setTranslationDomain, [AdminAdminBundle]]
-    sonata.admin.ExperienceAffectation:
-        class: Admin\AdminBundle\Admin\ExperienceAffectationAdmin
-        tags:
-            - { name: sonata.admin, manager_type: orm, group: "Content", label: "Experience To Guide Affectation" }
-        arguments:
-            - ~
-            - Admin\AdminBundle\Entity\ExperienceGuide
             - ~
         calls:
             - [ setTranslationDomain, [AdminAdminBundle]]
