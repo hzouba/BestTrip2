@@ -32,7 +32,7 @@ class __TwigTemplate_a3f3fecd0a8efffa1cfb6db1dccd185b8b43ea6747344255cda7ba8efb0
         echo "
      <div class=\"container\">
             <div class=\"gap\"></div>
-            <h2 class=\"text-center\">Top Experiences 22</h2>
+            <h2 class=\"text-center\">Top Experiences</h2>
             <div class=\"gap\">
                 <div class=\"row row-wrap\">
                     
@@ -119,17 +119,18 @@ class __TwigTemplate_a3f3fecd0a8efffa1cfb6db1dccd185b8b43ea6747344255cda7ba8efb0
                                     <div class=\"tab-content\">
                                         <div class=\"tab-pane fade in active\" id=\"tab-1\">
                                             <h2>Search a country, a city, a restaurant, a flgiht, a place ...</h2>
-                                            <form>
+                                            <form method=\"Post\">
                                                 <div class=\"row\">
                                                     <div class=\"col-md-4\">
                                                         <div class=\"form-group form-group-lg form-group-icon-left\"><i class=\"fa fa-map-marker input-icon\"></i>
                                                             <label>What are you looking for?</label>
-                                                            <input class=\"typeahead form-control\" placeholder=\"Country, City, Restaurant, Flight...\" type=\"text\" />
+                                                          
+                                                            <input class=\"typeahead form-control\" name=\"search\" placeholder=\"Country, City, Restaurant, Flight...\" type=\"text\" />
                                                         </div>
                                                     </div>
                                                 </div>
                                                 <button class=\"btn btn-primary btn-lg\" type=\"submit\">Search</button>
-                                            </form>
+                                            </form>                     
                                         </div>
                                      </div>
                                    </div>
@@ -141,7 +142,7 @@ class __TwigTemplate_a3f3fecd0a8efffa1cfb6db1dccd185b8b43ea6747344255cda7ba8efb0
                     <div class=\"bg-holder full\">
                         <div class=\"bg-mask\"></div>
                         <div class=\"bg-img\" style=\"background-image:url(";
-        // line 92
+        // line 93
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/img/2048x1365.png"), "html", null, true);
         echo ");\"></div>
                         
@@ -149,20 +150,20 @@ class __TwigTemplate_a3f3fecd0a8efffa1cfb6db1dccd185b8b43ea6747344255cda7ba8efb0
                     <div class=\"bg-holder full\">
                         <div class=\"bg-mask\"></div>
                         <div class=\"bg-img\" style=\"background-image:url(";
-        // line 97
+        // line 98
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/img/2048x2048.png"), "html", null, true);
         echo ");\"></div>
                     </div>
                     <div class=\"bg-holder full\">
                         <div class=\"bg-mask\"></div>
                         <div class=\"bg-img\" style=\"background-image:url(";
-        // line 101
+        // line 102
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/img/2048x1365.png"), "html", null, true);
         echo ");\"></div>
                     </div>
                 </div>
                 <div class=\"bg-img hidden-lg\" style=\"background-image:url(";
-        // line 104
+        // line 105
         echo twig_escape_filter($this->env, $this->env->getExtension('assets')->getAssetUrl("bundles/btfront/img/2048x1365.png"), "html", null, true);
         echo ");\"></div>
                 <div class=\"bg-mask hidden-lg\"></div>
@@ -185,6 +186,6 @@ class __TwigTemplate_a3f3fecd0a8efffa1cfb6db1dccd185b8b43ea6747344255cda7ba8efb0
 
     public function getDebugInfo()
     {
-        return array (  166 => 104,  160 => 101,  153 => 97,  145 => 92,  91 => 40,  88 => 39,  79 => 32,  67 => 26,  62 => 24,  54 => 19,  45 => 12,  41 => 11,  32 => 4,  29 => 3,  11 => 1,);
+        return array (  167 => 105,  161 => 102,  154 => 98,  146 => 93,  91 => 40,  88 => 39,  79 => 32,  67 => 26,  62 => 24,  54 => 19,  45 => 12,  41 => 11,  32 => 4,  29 => 3,  11 => 1,);
     }
 }

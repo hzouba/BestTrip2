@@ -13,3 +13,8 @@ bt_front_experience_object:
 bt_front_experience_feedback:
     path:     /experience_feedback
     defaults: { _controller: BTFrontBundle:Feedback:addFeedback }
+    
+bt_front_experience_by_country:
+    path:     /experience_country
+    defaults: { _controller: BTFrontBundle:Experience:findbycountry }
+
