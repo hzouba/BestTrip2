@@ -15,14 +15,34 @@
                                
                             
                         {{form_widget(form._token)}}
-                        <input class="btn btn-primary" type="submit" value="Add Experience" />
+                        <input class="btn btn-primary" type="submit" value="Find Experiences" />
                     </form>
                 </div>
                 <div class="col-md-4">
-                    
+                  {% for obj in liste_objet %}
+    
+           
+           <div class="col-md-3">
+                        <div class="thumb">
+                            <header class="thumb-header">
+                                <a class="hover-img curved" href="#">
+                                  
+                                    <img src="{{asset('./uploads/'~ obj.picture ~'') }}" alt="Image Alternative text" title="196_365" />
+                                </a>
+                            </header>
+                           
+                            <div class="thumb-caption">
+                                <h4 class="thumb-title"><a class="text-darken" href="#">{{obj.name}}</a></h4>
+                                <div class="thumb-caption">
+                                    <p class="thumb-desc">{{obj.description}}</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+    {% endfor %}  
                 </div>
             </div>
             <div class="gap"></div>
         </div>
-    
+     
 {% endblock bt_container %}

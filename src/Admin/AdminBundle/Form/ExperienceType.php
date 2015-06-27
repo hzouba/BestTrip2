@@ -16,6 +16,17 @@ class ExperienceType extends AbstractType
     {
         $builder
             ->add('name')
+            ->add('name', 'choice', array(
+    'choices'   => array('Tunisia' => 'Tunisia',
+        'France' => 'France',
+        'USA' => 'USA',
+        'Kenya' => 'Kenya',
+        'Liban' => 'Liban',
+        'Turkey' => 'Turkey',
+        'Italy' => 'Italy',
+        ),
+    'required'  => true,
+))
             ->add('dateAdd')
             ->add('idUser')
         ;

@@ -15,12 +15,17 @@ class SearcheType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-        $builder->add('name', 'entity', array(
-    'class' => 'AdminAdminBundle:Experience',
-    'property' => 'name',
-    'expanded' => false,
-    'multiple' => false
-));
+        $builder->add('name', 'choice', array(
+    'choices'   => array('Tunisia' => 'Tunisia',
+        'France' => 'France',
+        'USA' => 'USA',
+        'Kenya' => 'Kenya',
+        'Liban' => 'Liban',
+        'Turkey' => 'Turkey',
+        'Italy' => 'Italy',
+        ),
+    'required'  => true,
+))
            ;
     }
     

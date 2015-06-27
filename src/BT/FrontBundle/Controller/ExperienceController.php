@@ -62,9 +62,22 @@ class ExperienceController extends Controller
                 
                 $experience = $form->getData();
                 
+                $repository = $this->getDoctrine()
+                           ->getEntityManager()
+                           ->getRepository('AdminAdminBundle:ExperienceObject');
+                $namess=$experience->getName();
+        $repo=$this->getDoctrine()
+                           ->getEntityManager()->createQuery("SELECT o.picture,e.name,o.description FROM Admin\AdminBundle\Entity\Experience e, Admin\AdminBundle\Entity\ExperienceObject o WHERE e.idExperience = o.idExperience and e.name='".$namess."'");
+         
+        
+            $liste_objet = $repo->getResult();
+       
+         
+        
+     return $this->render('BTFrontBundle:Experience:experienceBycoutries.html.twig', array('form'=>$form->createView(),'liste_objet' => $liste_objet));            
               
                 
-                return $this->redirect($this->generateURL('bt_front_experience_object'));
+               
                 
             }
             

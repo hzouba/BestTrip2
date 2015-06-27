@@ -724,13 +724,13 @@ class appDevDebugProjectContainer extends Container
     protected function getDoctrine_Orm_DefaultEntityManagerService()
     {
         $a = new \Doctrine\Common\Cache\ArrayCache();
-        $a->setNamespace('sf2orm_default_48ee363e587f85392d59f6957ef46d99');
+        $a->setNamespace('sf2orm_default_ab867fda9e1c94c04d7d3be67b525871');
 
         $b = new \Doctrine\Common\Cache\ArrayCache();
-        $b->setNamespace('sf2orm_default_48ee363e587f85392d59f6957ef46d99');
+        $b->setNamespace('sf2orm_default_ab867fda9e1c94c04d7d3be67b525871');
 
         $c = new \Doctrine\Common\Cache\ArrayCache();
-        $c->setNamespace('sf2orm_default_48ee363e587f85392d59f6957ef46d99');
+        $c->setNamespace('sf2orm_default_ab867fda9e1c94c04d7d3be67b525871');
 
         $d = new \Doctrine\ORM\Mapping\Driver\SimplifiedXmlDriver(array(($this->targetDirs[3].'\\vendor\\friendsofsymfony\\user-bundle\\FOS\\UserBundle\\Resources\\config\\doctrine') => 'FOS\\UserBundle\\Entity', ($this->targetDirs[3].'\\vendor\\sonata-project\\user-bundle\\Resources\\config\\doctrine') => 'Sonata\\UserBundle\\Entity', ($this->targetDirs[3].'\\src\\Application\\Sonata\\UserBundle\\Resources\\config\\doctrine') => 'Application\\Sonata\\UserBundle\\Entity'));
         $d->setGlobalBasename('mapping');
@@ -2489,7 +2489,7 @@ class appDevDebugProjectContainer extends Container
         $f = new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationSuccessHandler($a, array('login_path' => '/admin/login', 'always_use_default_target_path' => false, 'default_target_path' => '/', 'target_path_parameter' => '_target_path', 'use_referer' => false));
         $f->setProviderKey('admin');
 
-        return $this->services['security.firewall.map.context.admin'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => $this->get('security.channel_listener'), 1 => $this->get('security.context_listener.0'), 2 => $e, 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $this->get('security.authentication.manager'), $this->get('security.authentication.session_strategy'), $a, 'admin', $f, new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler($c, $a, array('login_path' => '/admin/login', 'failure_path' => NULL, 'failure_forward' => false, 'failure_path_parameter' => '_failure_path'), $d), array('use_forward' => false, 'check_path' => '/admin/login_check', 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'intention' => 'authenticate', 'post_only' => true), $d, $this->get('event_dispatcher', ContainerInterface::NULL_ON_INVALID_REFERENCE)), 4 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '558d32dcc7475', $d), 5 => $this->get('security.access_listener')), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), $a, 'admin', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($c, $a, '/admin/login', false), NULL, NULL, $d));
+        return $this->services['security.firewall.map.context.admin'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => $this->get('security.channel_listener'), 1 => $this->get('security.context_listener.0'), 2 => $e, 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $this->get('security.authentication.manager'), $this->get('security.authentication.session_strategy'), $a, 'admin', $f, new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler($c, $a, array('login_path' => '/admin/login', 'failure_path' => NULL, 'failure_forward' => false, 'failure_path_parameter' => '_failure_path'), $d), array('use_forward' => false, 'check_path' => '/admin/login_check', 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'intention' => 'authenticate', 'post_only' => true), $d, $this->get('event_dispatcher', ContainerInterface::NULL_ON_INVALID_REFERENCE)), 4 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '558e5412efb50', $d), 5 => $this->get('security.access_listener')), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), $a, 'admin', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($c, $a, '/admin/login', false), NULL, NULL, $d));
     }
 
     /**
@@ -2526,7 +2526,7 @@ class appDevDebugProjectContainer extends Container
         $f = new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationSuccessHandler($a, array('login_path' => '/login', 'always_use_default_target_path' => false, 'default_target_path' => '/', 'target_path_parameter' => '_target_path', 'use_referer' => false));
         $f->setProviderKey('main');
 
-        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => $this->get('security.channel_listener'), 1 => $this->get('security.context_listener.0'), 2 => $e, 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $this->get('security.authentication.manager'), $this->get('security.authentication.session_strategy'), $a, 'main', $f, new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler($c, $a, array('login_path' => '/login', 'failure_path' => NULL, 'failure_forward' => false, 'failure_path_parameter' => '_failure_path'), $d), array('use_forward' => false, 'check_path' => '/login_check', 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'intention' => 'authenticate', 'post_only' => true), $d, $this->get('event_dispatcher', ContainerInterface::NULL_ON_INVALID_REFERENCE)), 4 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '558d32dcc7475', $d), 5 => $this->get('security.access_listener')), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), $a, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($c, $a, '/login', false), NULL, NULL, $d));
+        return $this->services['security.firewall.map.context.main'] = new \Symfony\Bundle\SecurityBundle\Security\FirewallContext(array(0 => $this->get('security.channel_listener'), 1 => $this->get('security.context_listener.0'), 2 => $e, 3 => new \Symfony\Component\Security\Http\Firewall\UsernamePasswordFormAuthenticationListener($b, $this->get('security.authentication.manager'), $this->get('security.authentication.session_strategy'), $a, 'main', $f, new \Symfony\Component\Security\Http\Authentication\DefaultAuthenticationFailureHandler($c, $a, array('login_path' => '/login', 'failure_path' => NULL, 'failure_forward' => false, 'failure_path_parameter' => '_failure_path'), $d), array('use_forward' => false, 'check_path' => '/login_check', 'require_previous_session' => true, 'username_parameter' => '_username', 'password_parameter' => '_password', 'csrf_parameter' => '_csrf_token', 'intention' => 'authenticate', 'post_only' => true), $d, $this->get('event_dispatcher', ContainerInterface::NULL_ON_INVALID_REFERENCE)), 4 => new \Symfony\Component\Security\Http\Firewall\AnonymousAuthenticationListener($b, '558e5412efb50', $d), 5 => $this->get('security.access_listener')), new \Symfony\Component\Security\Http\Firewall\ExceptionListener($b, $this->get('security.authentication.trust_resolver'), $a, 'main', new \Symfony\Component\Security\Http\EntryPoint\FormAuthenticationEntryPoint($c, $a, '/login', false), NULL, NULL, $d));
     }
 
     /**
@@ -5969,7 +5969,7 @@ class appDevDebugProjectContainer extends Container
         $b = $this->get('security.user_checker');
         $c = $this->get('security.encoder_factory');
 
-        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($a, $b, 'admin', $c, true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('558d32dcc7475'), 2 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($a, $b, 'main', $c, true), 3 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('558d32dcc7475')), true);
+        $this->services['security.authentication.manager'] = $instance = new \Symfony\Component\Security\Core\Authentication\AuthenticationProviderManager(array(0 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($a, $b, 'admin', $c, true), 1 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('558e5412efb50'), 2 => new \Symfony\Component\Security\Core\Authentication\Provider\DaoAuthenticationProvider($a, $b, 'main', $c, true), 3 => new \Symfony\Component\Security\Core\Authentication\Provider\AnonymousAuthenticationProvider('558e5412efb50')), true);
 
         $instance->setEventDispatcher($this->get('event_dispatcher'));
 
@@ -6249,7 +6249,7 @@ class appDevDebugProjectContainer extends Container
             'kernel.root_dir' => $this->targetDirs[2],
             'kernel.environment' => 'dev',
             'kernel.debug' => true,
-            'kernel.name' => 'app',
+            'kernel.name' => 'ap_',
             'kernel.cache_dir' => __DIR__,
             'kernel.logs_dir' => ($this->targetDirs[2].'\\logs'),
             'kernel.bundles' => array(
@@ -6690,7 +6690,7 @@ class appDevDebugProjectContainer extends Container
             'assetic.variables' => array(
 
             ),
-            'assetic.java.bin' => 'C:\\ProgramData\\Oracle\\Java\\javapath\\java.EXE',
+            'assetic.java.bin' => 'C:\\Program Files (x86)\\Java\\jdk1.7.0_05\\bin\\java.EXE',
             'assetic.node.bin' => '/usr/bin/node',
             'assetic.ruby.bin' => '/usr/bin/ruby',
             'assetic.sass.bin' => '/usr/bin/sass',

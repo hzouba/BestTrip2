@@ -95,7 +95,9 @@ class PersonalizedGuide {
 
         return $this;
     }
-
+public function __toString() {
+        return (string)$this->name;
+    }
     /**
      * Get name
      *
@@ -147,8 +149,6 @@ class PersonalizedGuide {
         return $this->dateCreation;
     }
 
-    public function __toString() {
-        return $this->name;
-    }
+    
 
 }

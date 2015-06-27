@@ -146,6 +146,11 @@ class appDevUrlMatcher extends Symfony\Bundle\FrameworkBundle\Routing\Redirectab
                     return array (  '_controller' => 'BT\\FrontBundle\\Controller\\FeedbackController::addFeedbackAction',  '_route' => 'bt_front_experience_feedback',);
                 }
 
+                // bt_front_experience_by_country
+                if ($pathinfo === '/experience_country') {
+                    return array (  '_controller' => 'BT\\FrontBundle\\Controller\\ExperienceController::findbycountryAction',  '_route' => 'bt_front_experience_by_country',);
+                }
+
             }
 
         }
