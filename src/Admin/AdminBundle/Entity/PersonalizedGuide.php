@@ -10,8 +10,8 @@ use Doctrine\ORM\Mapping as ORM;
  * @ORM\Table(name="personalized_guide")
  * @ORM\Entity
  */
-class PersonalizedGuide
-{
+class PersonalizedGuide {
+
     /**
      * @var integer
      *
@@ -22,9 +22,26 @@ class PersonalizedGuide
     private $idGuide;
 
     /**
-     * @var integer
+     * @var string
      *
-     * @ORM\Column(name="id_user", type="integer", nullable=false)
+     * @ORM\Column(name="name", type="string", length=254, nullable=true)
+     */
+    private $name;
+
+    /**
+     * @var string
+     *
+     * @ORM\Column(name="path", type="string", length=254, nullable=true)
+     */
+    private $path;
+
+    /**
+     * @var \Application\Sonata\UserBundle\Entity\User
+     *
+     * @ORM\ManyToOne(targetEntity="\Application\Sonata\UserBundle\Entity\User")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_user", referencedColumnName="id")
+     * })
      */
     private $idUser;
 
@@ -35,27 +52,24 @@ class PersonalizedGuide
      */
     private $dateCreation;
 
-
-
     /**
      * Get idGuide
      *
      * @return integer 
      */
-    public function getIdGuide()
-    {
+    public function getIdGuide() {
         return $this->idGuide;
     }
 
     /**
      * Set idUser
      *
-     * @param integer $idUser
+     * @param \Application\Sonata\UserBundle\Entity\User $id
      * @return PersonalizedGuide
      */
-    public function setIdUser($idUser)
+    public function setIdUser(\Application\Sonata\UserBundle\Entity\User $id = null)
     {
-        $this->idUser = $idUser;
+        $this->idUser = $id;
     
         return $this;
     }
@@ -63,11 +77,53 @@ class PersonalizedGuide
     /**
      * Get idUser
      *
-     * @return integer 
+     * @return \Application\Sonata\UserBundle\Entity\User 
      */
     public function getIdUser()
     {
         return $this->idUser;
+    }
+
+    /**
+     * Set name
+     *
+     * @param string $name
+     * @return PersonalizedGuide
+     */
+    public function setName($name) {
+        $this->name = $name;
+
+        return $this;
+    }
+
+    /**
+     * Get name
+     *
+     * @return string 
+     */
+    public function getName() {
+        return $this->name;
+    }
+
+    /**
+     * Set path
+     *
+     * @param string $path
+     * @return PersonalizedGuide
+     */
+    public function setPath($path) {
+        $this->path = $path;
+
+        return $this;
+    }
+
+    /**
+     * Get path
+     *
+     * @return string 
+     */
+    public function getPath() {
+        return $this->path;
     }
 
     /**
@@ -76,10 +132,9 @@ class PersonalizedGuide
      * @param \DateTime $dateCreation
      * @return PersonalizedGuide
      */
-    public function setDateCreation($dateCreation)
-    {
+    public function setDateCreation($dateCreation) {
         $this->dateCreation = $dateCreation;
-    
+
         return $this;
     }
 
@@ -88,11 +143,12 @@ class PersonalizedGuide
      *
      * @return \DateTime 
      */
-    public function getDateCreation()
-    {
+    public function getDateCreation() {
         return $this->dateCreation;
     }
-     public function __toString() {
-        return $this->idGuide.''.$this->idUser;
+
+    public function __toString() {
+        return $this->name;
     }
+
 }

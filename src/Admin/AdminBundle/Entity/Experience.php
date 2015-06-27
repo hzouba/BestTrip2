@@ -44,6 +44,16 @@ class Experience
      * })
      */
     private $idUser;
+
+    /**
+     * @var \Admin\AdminBundle\Entity\PersonalizedGuide
+     *
+     * @ORM\ManyToOne(targetEntity="\Admin\AdminBundle\Entity\PersonalizedGuide")
+     * @ORM\JoinColumns({
+     *   @ORM\JoinColumn(name="id_guide", referencedColumnName="id_guide")
+     * })
+     */
+    private $idGuide;
     
     /**
      * @var integer
@@ -131,6 +141,29 @@ class Experience
     {
         return $this->idUser;
     }
+
+    /**
+     * Set idGuide
+     *
+     * @param \Admin\AdminBundle\Entity\PersonalizedGuide $idGuide
+     * @return Experience
+     */
+    public function setIdGuide(\Admin\AdminBundle\Entity\PersonalizedGuide $idGuide = null)
+    {
+        $this->idGuide = $idGuide;
+    
+        return $this;
+    }
+
+    /**
+     * Get idGuide
+     *
+     * @return \Admin\AdminBundle\Entity\PersonalizedGuide
+     */
+    public function getIdGuide()
+    {
+        return $this->idGuide;
+    }
     
     /**
      * Set isValid
@@ -156,6 +189,6 @@ class Experience
     }
     
     public function __toString() {
-        return $this->name.''.$this->idUser;
+        return $this->name;
     }
 }
